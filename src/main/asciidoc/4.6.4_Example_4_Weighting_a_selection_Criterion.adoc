@@ -1,0 +1,66 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 4: Weighting a selection Criterion
+
+The Contracting Authority may like to score the Economic Operators in the evaluation phase for which the CA would need to inform the EO in a transparent way on how it will be weighted.
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|Weighting:
+
+*	In an open procedure the CA has to consider all tenders that pass the selection criteria. The contract is awarded based on award criteria;
+*	For two stage procedures for section C "Technical and professional ability" in selection criteria weighting should be possible. Section A/B/D in selection criteria are used as pass/fail;
+*	The CA should have a free text where they can describe the scoring methodology;
+*	The CA should have a field to specify the weight as a percentage or points;
+*	The CA should have a field to specify the weight as a percentage or points;
+*	The EO must have the possibility to answer the requirement in a free text.
+!===
+
+[.text-left]
+==== CA view
+
+The mock-up below represents the requirements the CA should be able to specify regarding the Weighting:
+
+*	The general method used to score and evaluate the weighted criteria;
+*	The evaluation method of the Criterion;
+*	The weight allocated to the Criterion;
+*	Complementary information regarding the evaluation of the Criterion.
+
+[.text-center]
+.Weighting selection technical and professional ability criteria, CA-view mock-up
+image::Mock_Up36.png[alt="UML_representation", width="900", height="900"]
+
+In this case all the Criterion Properties informing about the scoring and weighting methods are placed into the subcomponents of the UBL-2.2 cac:TeneringCriterion element: 
+
+*	cbc:WeightNumeric, to hold the weight allocated to the Criterion;
+*	cbc:EvaluationMethodTypeCode, to hold the Criterion evaluation method; (compulsory use of the Code List “”; if no method is specificat it defaults to “Pass/Fail”;
+*	cbc:WeightingConsiderationDescription, for additional information on the evaluation method;
+
+[.text-center]
+.Elements used to weight a Criterion
+image::Mock_Up37.png[alt="UML_representation", width="900", height="1100"]
+
+[.text-left]
+==== EO view
+
+The requirements specified by the Contracting Authority are to be shown to the Economic Operator. This mock-up below provides a possible representation for the EO point-of-view:
+
+[.text-center]
+.Weighting selection technical and professional ability criteria, EO-view mock-up
+image::Mock_Up38.png[alt="UML_representation", width="900", height="1100"]
+
+[.text-left]
+==== Data Structure
+
+In this case the data structure does not contain any requirement from the CA as all the data related to the weighting are placed in UBL-2.2 elements, out of the cac:TenderingCriterion component (the structure has not changed since the previous version of the ESPD-EDM).
+
+[.text-center]
+image::Mock_Up39.png[alt="UML_representation", width="900", height="600"]
+
+[.text-left]
+==== XML example
+
+
+
+

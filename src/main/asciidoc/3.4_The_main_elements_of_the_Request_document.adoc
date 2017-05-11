@@ -1,0 +1,6 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== The main elements of the Request document
+
+This section describes the XSD schema elements used instantiate an ESP Request document. It also provides snippets of XML illustrate how to implement those elements in conformance to the ESPD-EDM expectations.

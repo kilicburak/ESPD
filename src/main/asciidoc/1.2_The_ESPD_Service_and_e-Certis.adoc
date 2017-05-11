@@ -1,0 +1,16 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== The ESPD Service and e-Certis
+
+In order to make use of the ESPD concept, the European Commission has established an on-line service available for both suppliers and buyers. 
+The ESPD Service tool allows Contracting Authorities and Economic Operators to create, edit, export and import electronic documents in XML format (eESPD) for the exchange of criteria, requirements, statements and references to evidences.
+
+The main objective of the ESPD is to reduce the administrative burden and lead to considerable simplification of participation in public procurement procedures for buyers and suppliers. The service, the ESPD Service footnote:[https://ec.europa.eu/tools/espd/filter?lang=en] , will reduce that burden by removing the need to produce a substantial number of certificates and documentation related to exclusion and selection criteria. This will answer to obstacles reported by many suppliers and especially SMEs.
+
+The ESPD service is also integrated with e-Certis footnote:[https://ec.europa.eu/growth/tools-databases/ecertis/]  - a mapping tool used to identify and compare certificates requested in public procurement procedures across the EU. The full potential of the eESPD will be reached when tenderers will provide links to repositories, which hold data proving their compliance with the exclusion and selection criteria. 
+Both, ESPD-EDM and e-Certis are currently being evolved to become a “Qualification Information System” where:
+
+*  e-Certis will provide the Member States the possibility of define Criteria, including Exclusion and Selection Criteria and particular MS requirements and associate them to online evidences kept in the official national databases and base registries. In time, e-Certis will become a “source or trust” for the exchange of information between Economic Operators, Contracting Authorities, Service Providers and Authorities;
+*  The eESPD will act as a “business passport” for companies bidding for tenders anywhere in the EU.
+

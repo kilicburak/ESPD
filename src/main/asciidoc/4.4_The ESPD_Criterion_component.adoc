@@ -1,0 +1,79 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== The ESPD Criterion component
+
+This version 2.0.0 of the ESPD-EDM uses the UBL-2.2 component cac:TenderingCriterion to represent any Exclusion and Selection criteria. The global structure of the UBL-2.2 component is identical to the one in the previous version of the ESPD-EDM. Notice however that the naming of some elements have changed (e.g. “RequirementGroup” and “Requirement” are named as “TenderingCriterionPropertyGroup” and “TenderingCriterionProperty”).
+
+See also section “5.6.3 Example 3: Weighting a selection Criterion” for an example of how to weight a Criterion.
+
+|===
+|*Element Name*|*cac:TenderingCriterion*
+|*ESPD Use*|Used to specify any type of criteria (e.g. Exclusion, Selection Criteria or other). In the case of the Self-contained ESPD, the Criterion component is also used by the Contracting Authority to specify concrete requirements of the procurement procedure.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationRequest/cac:TenderingCriterion
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_6.png[alt="UML_representation", width="700", height="900"]
+|===
+|===
+|*UBL Definition*|An exclusion or selection Criterion.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:ID*
+|Identifier
+|0..1
+|1
+|An identifier to refer to the Criterion requirement. ESPD constraint: Compulsory use of the list “CriteriaTaxonomy”.
+|*cbc:CriterionTypeCode*
+|Code
+|0..1
+|1
+|A code signifying the type of Criterion. ESPD: Compulsory use of the Code List “CriteriaType”.
+|*cbc:Name*
+|Text
+|0..1
+|1
+|The name of the Criterion.
+|*cbc:Description*
+|Text
+|0..1
+|1
+|The textual description for this Criterion.
+|*cbc:WeightNumeric*
+|Numberic
+|0..1
+|0..1
+|A weighting to provide for automatic scoring of the Criterion.
+|*cbc:EvaluationMethodTypeCode*
+|Code
+|0..1
+|0..1
+|A code signifying the type of Evaluation. ESPD: Compulsory use of the Code List “EvaluationMethodType”
+|*cbc:weightingConsiderationDescription*
+|Text	
+|0..1
+|0..1
+|The textual description of the Weighting Description
+|*cac: SubTenderingCriterion*
+|Complex
+|0..n
+|0..n
+|One or more tendering subcriteria.
+|*cac:Legislatione*
+|Complex
+|0..n
+|0..n
+|The legislation reference for the Criterion.
+|*cac:TenderingCriterionPropertyGroup*
+|Complex
+|0..n
+|1..n
+|The sets of properties that can be used to fulfil the tendering Criterion. In previous versions of the ESPD-EDM this was termed “RequirementGroup”.
+|===

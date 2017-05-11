@@ -1,0 +1,20 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Code Lists
+
+In this Version 2.0.0 of the ESDP-EDM:
+
+*	Except in two cases (“CurrencyCode” and “EULanguageCode”) all the Code Lists that ended in “Code” have been renamed. They all now end in “Type” or “Level”;
+*	All the Code Lists maintained by DG GROW (European Commission) have upgraded the version number to 2.0.0;
+*	CEN/BII Code List “TendererRole” has been replaced with a GROW “EORoleType” Code List. The values of the lists are now different from the previous version;
+*	“CriterionJurisdictionLevel” has been renamed into “LegislationType”. The values have not changed in respect of the previous version;
+*	A new Code List “JurisdictionLevel” has been created, namely used to specify the jurisdiction level of a gazette or publication board where the contract documents of the procurement procedure have been published, see values below;
+*	The Code List “CustomizationID” is not currently used by the ESPD Service;
+*	A new Code List “QualificationApplicationType” has been created to specify whether the ESPD is “Regulated” or “Self-contained”;
+*	A new code “NONE” has been added to the Code List “ResponseDataType”. This code is used for those Requirement(s) used to specify requirements the response to which is calculated out from the responses in other criteria (e.g. see Criterion “Requirements on lots”);
+*	A new Code List “NumberOfLotsCode” has been created to specify to how many lots the economic operator may tender;
+*	A new Code List “EvaluationMethodType” has been created to specify whether the Criterion is weighted or a pass/fail one;
+*	A new Code List “EOIDType” has been created to state the type of identifier of an Economic Operator of a group of tenderers (see section about Consortia);
+*	A new Code List “ConfidentialityLevel” has been create to set whether an answer to a Criterion Property or and evidence can be publicly accessible or not;
+*	A new code “IDENTIFER” has been added to the Code List “ResponseDataType”, namely used to identify lists of lots when identifying the lots into which a Procurement Procedure is divided or the lots to which the Economic Operator tenders.

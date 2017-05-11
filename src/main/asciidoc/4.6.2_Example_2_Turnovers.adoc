@@ -1,0 +1,341 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 2: Turnovers
+
+The Contracting Authority needs to be able to assess the economic and financial standing of the Economic Operators (EO) for which the CA will require the EOs provide their Turnovers of the past N years.
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|General Yearly and Average Turnovers	: 
+
+*  The CA SHOULD be able to specify the number of the past recent years for which it will require Turnovers;
+
+*  The EO MUST express the Turnover as an Amount, and must specify the currency for that Amount (the default should be €, Euros);
+
+*  The CA SHOULD have the possibility of specifying the minimum amount it expects from the EO.|
+
+|Specific Yearly and Average Turnovers:
+
+*  The CA SHOULD be able to specify the number of the past recent years for which it will require Specific Turnovers;
+
+*  The EO MUST express the Specific Turnover as an Amount, and must specify the currency for that Amount (the default should be €, Euros);
+
+*  For Turnovers "in the business covered by the contract" the EO MAY specify one or more Common Procurement Vocabulary codes to indicate the activities that were developed for that turnover;
+
+*  The CA SHOULD have the possibility of specifying the minimum Amount it expects from the EO.
+!===
+
+[.text-left]
+==== General Yearly Turnover
+
+[.text-left]
+==== CA view
+
+The mock-up below represents the requirements the CA should be able to specify for a General Yearly Turnover Criterion:
+
+*  The minimum amount expected by the CA per each yearly turnover.
+
+*  The minimum amount expected by the CA per each yearly turnover.
+
+[.text-center]
+.General Yearly Turnovers, Procurement Procedure requirements established by the CA, mock-up
+image::Mock_Up21.png[alt="UML_representation", width="800", height="400"]
+
+[.text-left]
+====  EO view
+
+The requirements specified by the Contracting Authority are to be shown to the Economic Operator. This mock-up below provides a possible representation for the EO point-of-view:
+
+[.text-center]
+.General Yearly Turnovers, EO view, mock-up
+image::Mock_Up22.png[alt="UML_representation", width="800", height="400"]
+
+[.text-left]
+==== Data Structure
+
+The data structure for both the requirements and the expected responses follow, extracted from the “Criteria Taxonomy” spread-sheet. Beware that the group of Criterion Properties set by the CA (C29/G1) may be instantiated n times.
+
+
+[.text-center]
+image::Mock_Up23.png[alt="UML_representation", width="800", height="700"]
+
+
+==== XML example 
+
+[source,xml]
+----
+...
+
+<cac:TenderingCriterion>
+	<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0..0">499efc97-2ac1-4af2-9e84-323c2ca67747</cbc:ID>
+	<cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY</cbc:CriterionTypeCode>
+		<cbc:Name>General Yearly Turnover</cbc:Name>
+		<cbc:Description>Its general yearly turnover for the number of financial years required in the relevant notice, the procurement documents or the ESPD is as follows:</cbc:Description>
+		<!-- EU Criterion Legislation-->
+		<cac:Legislation> ... </cac:Legislation>
+		<!—CA’s requirements-->
+		<cac:TenderingCriterionPropertyGroup>. .. </ cac:TenderingCriterionPropertyGroup>
+		<cac:TenderingCriterionPropertyGroup>. .. </ cac:TenderingCriterionPropertyGroup>
+		<cac:TenderingCriterionPropertyGroup>. .. </ cac:TenderingCriterionPropertyGroup>
+		<!—Turnovers -->
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">e1886054-ada4-473c-9afc-2fde82c24cf4</cbc:ID>		
+			<cac:TenderingCriterionProperty>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">15335c12-ad77-4728-b5ad-3c06a60d65a4</cbc:ID>
+				<cbc:Description>Provide values for the turnovers</cbc:Description>
+				<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<!-- T1 -->
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">362ea0d9-1d50-4764-a597-350b0b3700cc</cbc:ID>
+					<cbc:Description>Start date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>	
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">76924696-77a0-4fb7-8838-1fe7b9c7783a</cbc:ID>
+					<cbc:Description>End date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">aa0638b7-a723-48e1-93f4-af12ae04e487</cbc:ID>
+					<cbc:Description>Amount</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>						</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+			<!-- T2-->			
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">9c68fbe4-e955-4185-a86e-6947ed9e2219</cbc:ID>
+					<cbc:Description>Start date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>	
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">9a27d9ca-f87f-4a5f-960c-6fe0859a7c99</cbc:ID>
+					<cbc:Description>End date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c2ef50a1-61e7-47dd-a4b6-d8ff932b9bea</cbc:ID>
+					<cbc:Description>Amount</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>				
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+			<!-- T3 -->
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">72fd26d8-090a-4c1c-bc93-4d76b805bbbe</cbc:ID>
+					<cbc:Description>Start date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>	
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c0e23037-91a4-4062-aff7-dfc05f777f5a</cbc:ID>
+					<cbc:Description>End date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">cd832ae3-e09e-47a5-a204-dfc053dd5deb</cbc:ID>
+					<cbc:Description>Amount</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>		
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>		
+	</cac:TenderingCriterion>	
+----
+
+==== Average Yearly Turnover
+
+==== CA view
+
+The mock-up below represents the requirements the CA should be able to specify for an Average Yearly Turnover Criterion:
+
+*  A period of time encompassing the yearly turnovers for which the average is to be calculated;
+
+*  A minimum amount for which the EO’s average yearly turnover must equal or be greater.
+
+[.text-center]
+.Average Yearly Turnovers, Procurement Procedure requirements established by the CA, mock-up
+image::Mock_Up22.png[alt="UML_representation", width="800", height="400"]
+
+==== EO view
+
+The requirements specified by the Contracting Authority are to be shown to the Economic Operator. This mock-up below provides a possible representation for the EO point-of-view. Notice that the CA’s requirement are shown (lower left side of the mock-up):
+
+[.text-center]
+.Average Yearly Turnovers, EO view, mock-up
+image::Mock_Up23.png[alt="UML_representation", width="800", height="400"]
+
+==== Data Structure
+
+The data structure for both the requirements and the expected responses follow, extracted from the “Criteria Taxonomy” spread-sheet. Notice that, differently to the previous case, the sub-group of Criterion Properties set by the CA (C30/G1) is not to be instantiated n times (as this is an average turnover).
+
+[.text-center]
+image::Mock_Up26.png[alt="UML_representation", width="800", height="400"]
+
+[source,mxl]
+----
+<cac:TenderingCriterion>
+	<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0..0">e4d37adc-08cd-4f4d-a8d8-32b62b0a1f46</cbc:ID>
+	<cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.FINANCIAL_RATIO</cbc:CriterionTypeCode>
+	<cbc:Name>Financial Ratios</cbc:Name>
+	<cbc:Description>Concerning the financial ratios specified in the relevant notice, the procurement documents or the ESPD, the economic operator declares that the actual values for the required ratios are as follows:</cbc:Description>
+	<!-- EU Criterion Legislation-->
+	<cac:Legislation></cac:Legislation>
+	<!-- CA's group of requirements -->
+	<cac:TenderingCriterionPropertyGroup>
+		<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">1f14001a-e177-4dcc-9039-819d4827bff6</cbc:ID>
+			<cac:TenderingCriterionProperty>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">33baad9b-840c-4528-b0cf-0b4178e9e067</cbc:ID>
+				<cbc:Description>Select the period applicable for all ratios</cbc:Description>
+				<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">43817640-cffa-44a6-b211-7dd5f852c60e</cbc:ID>
+				<cac:TenderingCriterionProperty>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">5148bb65-3c1c-4689-b03d-41f3a0ad96b6</cbc:ID>
+					<cbc:Description>Period</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">PERIOD</cbc:ValueDataTypeCode>				
+				</cac:TenderingCriterionProperty>
+				<!-- RATIO 1 -->
+				<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">e557397e-46ef-4f72-8908-02d8b63049b6</cbc:ID>			
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">171aebb5-e551-4356-a05f-2f9c6b1299df</cbc:ID>
+						<cbc:Description>Select the ratio type</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>										
+						<cbc:ExpectedCode listID="FinancialRatioType" listAgencyName="BACH" listVersionID="1.0">R11</cbc:ExpectedCode>
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">8a38c20a-a144-4547-bf1f-596d2028cb22</cbc:ID>
+						<cbc:Description>Definition</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+						<cbc:CertificationLevelDescription>Balance Sheet / Total Equity</cbc:CertificationLevelDescription>										
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">3cf2f60f-b8fd-47e0-b014-bd0d6eeef3d8</cbc:ID>
+						<cbc:Description>Minimum requirement</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>					<cbc:ExpectedValueNumeric>0.7</cbc:ExpectedValueNumeric>
+					</cac:TenderingCriterionProperty>
+				</cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<!-- RATIO 2 -->
+				<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">817c9cec-dc49-4b41-8147-69b6ffc61776</cbc:ID>			
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">bbabf02e-d126-4bac-89db-9df4c66f3419</cbc:ID>
+						<cbc:Description>Select the ratio type</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+<cbc:ExpectedCode listID="FinancialRatioType" listAgencyName="BACH" listVersionID="1.0">R21</cbc:ExpectedCode>
+		</cac:TenderingCriterionProperty>
+		<cac:TenderingCriterionProperty>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">b9b469c1-d57b-4cc9-8a3b-65cdf322ab09</cbc:ID>
+			<cbc:Description>Definition</cbc:Description>
+			<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+			<cbc:CertificationLevelDescription>Financial income net of charges other than interest over EBITDA</cbc:CertificationLevelDescription>						</cac:TenderingCriterionProperty>
+		<cac:TenderingCriterionProperty>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">8ec4f734-5ddd-47bb-aa73-111bf185626b</cbc:ID>
+			<cbc:Description>Minimum requirement</cbc:Description>
+			<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>			<cbc:ExpectedValueNumeric>0.5</cbc:ExpectedValueNumeric>
+					</cac:TenderingCriterionProperty>
+				</cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<!-- RATIO 3 -->
+				<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">4eea4639-c6cf-41af-b7dc-435ca7586357</cbc:ID>			
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">8e059cff-b644-4b90-afd0-136e0d8dd542</cbc:ID>
+						<cbc:Description>Select the ratio type</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>										
+						<cbc:ExpectedCode listID="FinancialRatioType" listAgencyName="BACH" listVersionID="1.0">R31</cbc:ExpectedCode>
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">1d8def2b-4db6-403e-ba01-80a3a47e3df6</cbc:ID>
+						<cbc:Description>Definition</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+						<cbc:CertificationLevelDescription>Gross value added  / Net turnover</cbc:CertificationLevelDescription>										
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">8ec4f734-5ddd-47bb-aa73-111bf185626b</cbc:ID>
+						<cbc:Description>Minimum requirement</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>										
+						<cbc:ExpectedValueNumeric>0.5</cbc:ExpectedValueNumeric>
+					</cac:TenderingCriterionProperty>
+				</cac:SubsidiaryTenderingCriterionPropertyGroup>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>
+	<!-- Is this information available online? -->	
+	<cac:TenderingCriterionPropertyGroup>...</cac:TenderingCriterionPropertyGroup>
+</cac:TenderingCriterion>	
+----
+
+==== Specific Yearly Turnover
+
+==== CA view
+
+The mock-up below represents the requirements the CA should be able to specify for an Specific Yearly Criterion:
+
+* The number of fiscal years for which the Economic Operator will have to provide turnovers; e.g. last 5 years.
+
+* The CPV codes codes to indicate the activities that were developed during those fiscal years;
+
+* A description of the business area for which these turnovers are specific;
+
+* A minimum amount for which each specific yearly turnover must equal or be greater.
+
+[.text-center]
+.Specific Yearly Turnover, Procurement Procedure requirements established by the CA, mock-up
+image::Mock_Up27.png[alt="UML_representation", width="800", height="400"]
+
+==== EO view
+
+The requirements specified by the Contracting Authority are to be shown to the Economic Operator. This mock-up below provides a possible representation for the EO point-of-view. Notice that the CA’s requirement are shown (notice that the CA requirements are shown to the EO):
+
+[.text-center]
+.Specific Yearly Turnover, EO view, mock-up
+image::Mock_Up28.png[alt="UML_representation", width="800", height="400"]
+
+==== Data Structure
+
+The data structure for both the requirements and the expected responses follow, extracted from the “Criteria Taxonomy” spread-sheet.
+
+[.text-center]
+image::Mock_Up29.png[alt="UML_representation", width="800", height="400"]
+
+==== XML example
+
+[TODO:]
+
+==== Specific Average Turnover
+
+==== CA view
+
+The mock-up below represents the requirements the CA should be able to specify for an Specific Turnover Criterion:
+
+*	The number of fiscal years for the average turnover; e.g. last 3 years.
+*	The CPV codes codes to indicate the activities that were developed during those fiscal years;
+*	A description of the business area for which the average turnover is specific;
+*	A minimum amount for which the EO’s average yearly turnover must equal or be greater.
+
+[.text-center]
+.Specific Average Turnover, Procurement Procedure requirements established by the CA, mock-up
+image::Mock_Up30.png[alt="UML_representation", width="800", height="400"]
+
+==== EO view
+
+The requirements specified by the Contracting Authority are to be shown to the Economic Operator. This mock-up below provides a possible representation for the EO point-of-view. Notice that the CA’s requirement are shown:
+
+[.text-center]
+.Specific Average Turnover, EO view, mock-up
+image::Mock_Up31.png[alt="UML_representation", width="800", height="400"]
+
+==== Data Structure
+
+The data structure for both the CA requirements and the expected responses follow, extracted from the “Criteria Taxonomy” spread-sheet. Notice that, differently to the previous case, the sub-group of Criterion Properties set by the CA (C32/G1) is not to be instantiated n times (as this is an average turnover).
+
+[.text-center]
+image::Mock_Up32.png[alt="UML_representation", width="800", height="400"]
+
+==== XML example
+
+[TODO:]
+
+
+

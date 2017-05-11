@@ -1,0 +1,26 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== ESPD-EDM constraints related to the Request
+
+For the time being, this version 2.0.0 of the EPSD-EDM uses the UBL-2.2 schemata as they are provided by UBL. Therefore the ESPD-EDM will not use a customised version of the UBL-2.2 XSD Schemata. The rationale for this is to provide the maximum flexibility to the MS and Service Providers when adapting or evolving their systems to meet the needs of their e-Tendering, Pre-Qualification, Evaluation or other systems. 
+
+Nonetheless the ESPD-EDM imposes certain constraints upon the original UBL-2.2 schema, namely regarding the cardinality of some elements. In order to control these constraints the ESPD-EDM uses ISO Schematron (2) assertions footnote:[Test Cases and artefacts to perform the XML validation will be provided alongside the ESPD-EDM documentation through the dissemination solutions adopted by the EC (e.g. wiki on public Github repository).].
+
+In the context of the ESPD-EDM the following requirements need to be satisfied:
+
+*  Always specify whether this is a “Regulated” or a “Self-contained” document. Use the QualificationApplicationTypeCode component and the Code List “ESPDTypes”;
+
+*  Always identify the Request document with an internal identifier (use the cbc:ID element). It is also a good practice to identify each specific XML instance issued with a Unique Universal ID (UUID);
+
+*  Specify only one Contracting Authority: provide only one instance of the UBL-2.2 cac:ContractingParty. If in the procurement procedure more than one Contracting Authority participates specify only the leading one;
+
+*  Always identify the procurement procedure (use the cac:ProcurementProject component);
+
+*  If the procurement procedure is not divided into lots do not provide any instance of the component cac:ProcurementProjectLot. If the Request document contains one instance of a lot (and only one) the assumption will be that the procurement procedure is not split into lots;
+
+*  All exclusion criteria specified in the Commission Implementing Regulation (EU) 2016/7 (1) MUST be specified in the Request document;
+
+*  At least one selection Criterion MUST be specified in the Request document;
+
+*  A reference to the Contract Notice MUST be included in the Request. Use the component AdditionalDocumentReference for this purpose.

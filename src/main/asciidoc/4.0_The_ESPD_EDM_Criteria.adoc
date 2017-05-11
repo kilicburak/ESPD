@@ -1,0 +1,47 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-center]
+== IV.The ESPD-EDM Criteria
+
+[.text-left]
+The central element of the ESPD is the concept “Criterion”. In general, criteria are used to ask questions and require data that will be used at evaluation time to exclude or select candidate persons, organisations, products, etc.
+
+[.text-left]
+The ESPD Exchange Data Model (ESPD-EDM) uses XML data structures to express the questions and ask for (or express) information on the legal exclusion grounds and the  capacities (technical, economic and financial, etc.) to exclude or select Economic Operators as candidates to win a Procurement Procedure.
+
+include::4.1_ESPD-EDM_constraints_related_to_the criteria.adoc[]
+
+include::4.2_The_ESPD_EDM_Criteria_Taxonomy.adoc[]
+
+include::4.3_Rules_to_build_an_ESPD_Criterion.adoc[]
+
+include::4.4_The ESPD_Criterion_component.adoc[]
+
+include::4.4.1_Criterion_sub-elements.adoc[]
+
+include::4.4.2_Groups_of_Properties_and_Properties_of_a_Criterion.adoc[]
+
+include::4.4.3_Example_Information_about_the_Lots.adoc[]
+
+include::4.5_Exclusion_criteria.adoc[]
+
+include::4.5.1_Exclusion_criteria_XML_implementation.adoc[]
+
+include::4.5.2_Example_1_A_Conviction_Exclusion_Criterion_with_national_sub-criteria.adoc[]
+
+include::4.5.3_Example_2EU_Payment_of_Taxes_Criterion_with_a_national_specific_requirement.adoc[]
+
+include::4.5.4_Example_3_Purely_national_Exclusion_grounds.adoc[]
+
+include::4.6_Selection_criteria.adoc[]
+
+include::4.6.1_Example_1_Suitability.adoc[]
+
+include::4.6.2_Example_2_Turnovers.adoc[]
+
+include::4.6.3_Example_3_Financial_Ratios.adoc[]
+
+include::4.6.4_Example_4_Weighting_a_selection_Criterion.adoc[]
+
+include::4.6.5_Example_5_References_on_similar_works_deliveries_or_services.adoc[]
+

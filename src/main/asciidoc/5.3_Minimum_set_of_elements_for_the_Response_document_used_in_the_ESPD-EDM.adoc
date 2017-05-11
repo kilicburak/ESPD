@@ -1,0 +1,123 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Minimum set of elements for the Response document used in the ESPD-EDM
+
+|===
+|*Document Name*|*QualificationApplicationResponse*
+|*UBL Definition*|A document issued by a procurement organization to notify an Economic Operator whether it has been admitted to or excluded from the tendering process.
+|*File*|dist/main/xsdrt/UBL-QualificationApplicationRequest-2.2-Pre-award.xsd
+|===
+|===
+|*Components*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:UBLVersionID*
+|Identifier
+|0..1
+|1
+|Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+
+|*cbc:CustomizationID*
+|Identifier
+|0..1
+|1
+|Identifies a user-defined customization of UBL for a specific use. ESPD: use the value “ESPD-EDM-2.0.0”. See XML example below.
+
+|*cbc:ID*
+|Identifier
+|0..1
+|1
+|An identifier for this document, assigned by the sender.
+
+|*cbc:UUID*
+|Identifier
+|0..1
+|1
+|A universally unique identifier for an instance of this document.
+
+|*cbc:ContractFolderID*
+|Identifier
+|1
+|1
+|An identifier, assigned by the sender, for the process file (i.e., record) to which this document belongs. ESPD: This identifier is provided by the Contracting Authority and identifies (should be present in) all the contract documents related to the procurement procedure.
+
+|*cbc:IssueDate*
+|Date
+|1
+|1
+|The date, assigned by the sender, on which this document was issued.
+
+|*cbc:IssueTime*
+|Time
+|0..1
+|0..1
+|The time, assigned by the sender, at which this document was issued.
+
+|*cbc:EconomicOperatorGroupName*
+|Text
+|0..1
+|0..1
+|Economic Operator Group Name associated with this Qualification. ESPD: name of the group to which this Economic Operator belongs (e.g. a Consortium name).
+
+|*cbc:QualificationApplicationTypeCode*
+|Code
+|0..1
+|1
+|A code specifying the type of the Qualification Application.
+
+|*cbc:Note*
+|Text
+|0..1
+|0..1
+|Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+
+|*cac:ContractingParty*
+|Complex
+|1..n
+|1
+|The Contracting Authority or entity in charge of the procurement procedure.
+
+|*cbc:EconomicOperatorParty*
+|Complex
+|1..n
+|1
+|The Economic Operator issuing the Qualification Application Response.
+
+|*cac:ProcurementProject*
+|Complex
+|0..1
+|1
+|An overall definition of this procurement procedure.
+
+|*cac:ProcurementProjectLot*
+|Complex
+|0..n
+|0..n
+|One of the procurement project lots into which this contract can be split.
+
+|*cac:TenderingCriterion*
+|Complex
+|0..n
+|1..n
+|The Criterion as described in the Qualification Application Request.
+
+|*cac:TenderingCriterionResponse*
+|Complex
+|0..n
+|1..n
+|Each Criterion property response.
+
+|*cac:Evidence*
+|Complex
+|0..n
+|0..n
+|Each Criterion property response.
+
+|*cac:AdditionalDocumentReference*
+|Complex
+|0..n
+|1..n
+|A reference to an additional document associated with this document.
+
+
+|===

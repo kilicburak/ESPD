@@ -1,0 +1,159 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 3: Turnovers
+
+==== Situation
+
+*	The EO answers a General Yearly Turnover Selection Criterion for which the the CA has established the following requirements:
+**	To specify the turnovers for the past three years
+**	To have a yearly turnover equal or greater to the amounts specified (see mock-up below).
+*	The EO does not provide online evidences
+
+[.text-center]
+image::Mock_Up59.png[alt="UML_representation", width="1100", height="700"]
+
+==== Data Structure
+
+[.text-center]
+image::Mock_Up60.png[alt="UML_representation", width="1100", height="700"]
+
+==== XML instance copied from the Request document
+
+Copied from XML code in section “5.6.2.1 General Yearly Turnover”.
+
+[source,xml]
+----
+...
+
+<cac:TenderingCriterion>
+	<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0..0">499efc97-2ac1-4af2-9e84-323c2ca67747</cbc:ID>
+	<cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY</cbc:CriterionTypeCode>
+		<cbc:Name>General Yearly Turnover</cbc:Name>
+		<cbc:Description>Its general yearly turnover for the number of financial years required in the relevant notice, the procurement documents or the ESPD is as follows:</cbc:Description>
+		<!-- EU Criterion Legislation-->
+		<cac:Legislation> ... </cac:Legislation>
+		<!—CA’s requirements-->
+		<cac:TenderingCriterionPropertyGroup>. .. </ cac:TenderingCriterionPropertyGroup>
+		<cac:TenderingCriterionPropertyGroup>. .. </ cac:TenderingCriterionPropertyGroup>
+		<cac:TenderingCriterionPropertyGroup>. .. </ cac:TenderingCriterionPropertyGroup>
+		<!—Turnovers -->
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">e1886054-ada4-473c-9afc-2fde82c24cf4</cbc:ID>		
+			<cac:TenderingCriterionProperty>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">15335c12-ad77-4728-b5ad-3c06a60d65a4</cbc:ID>
+				<cbc:Description>Provide values for the turnovers</cbc:Description>
+				<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<!-- T1 -->
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">362ea0d9-1d50-4764-a597-350b0b3700cc</cbc:ID>
+					<cbc:Description>Start date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>	
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">76924696-77a0-4fb7-8838-1fe7b9c7783a</cbc:ID>
+					<cbc:Description>End date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">aa0638b7-a723-48e1-93f4-af12ae04e487</cbc:ID>
+					<cbc:Description>Amount</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>						</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+			<!-- T2-->			
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">9c68fbe4-e955-4185-a86e-6947ed9e2219</cbc:ID>
+					<cbc:Description>Start date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>	
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">9a27d9ca-f87f-4a5f-960c-6fe0859a7c99</cbc:ID>
+					<cbc:Description>End date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c2ef50a1-61e7-47dd-a4b6-d8ff932b9bea</cbc:ID>
+					<cbc:Description>Amount</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>				
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+			<!-- T3 -->
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">72fd26d8-090a-4c1c-bc93-4d76b805bbbe</cbc:ID>
+					<cbc:Description>Start date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>	
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c0e23037-91a4-4062-aff7-dfc05f777f5a</cbc:ID>
+					<cbc:Description>End date</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">cd832ae3-e09e-47a5-a204-dfc053dd5deb</cbc:ID>
+					<cbc:Description>Amount</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>		
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>		
+	</cac:TenderingCriterion>	
+----
+
+==== Answers provided by the EO
+
+[source,xml]
+----
+...
+	<!-- Responses -->	
+	<!-- T1 Start Date-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">362ea0d9-1d50-4764-a597-350b0b3700cc</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseDate>2013-04-03</cbc:ResponseDate></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- T1 End Date-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">76924696-77a0-4fb7-8838-1fe7b9c7783a</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseDate>2014-04-03</cbc:ResponseDate></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- T1 Amount-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">aa0638b7-a723-48e1-93f4-af12ae04e487</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseAmount currencyID="EUR">5541314.23</cbc:ResponseAmount></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>	
+	<!-- T2 Start Date-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">9c68fbe4-e955-4185-a86e-6947ed9e2219</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseDate>2014-04-03</cbc:ResponseDate></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- T2 End Date-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">9a27d9ca-f87f-4a5f-960c-6fe0859a7c99</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseDate>2015-04-03</cbc:ResponseDate></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- T2 Amount-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c2ef50a1-61e7-47dd-a4b6-d8ff932b9bea</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseAmount currencyID="EUR">9231341.00</cbc:ResponseAmount></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>	
+<!-- T3 Start Date-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">72fd26d8-090a-4c1c-bc93-4d76b805bbbe</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseDate>2015-04-03</cbc:ResponseDate></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+<!—T3 End Date-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c0e23037-91a4-4062-aff7-dfc05f777f5a</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseDate>2016-04-03</cbc:ResponseDate></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!—T3 Amount-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">cd832ae3-e09e-47a5-a204-dfc053dd5deb</cbc:ValidatedCriterionRequirementID>
+		<cac:ResponseValue><cbc:ResponseAmount currencyID="EUR">9941927.15</cbc:ResponseAmount></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>	
+	<!-- No Evidences -->
+</QualificationApplicationResponse>
+----
+

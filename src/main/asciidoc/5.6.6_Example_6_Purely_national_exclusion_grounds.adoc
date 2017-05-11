@@ -1,0 +1,41 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 6: Purely national exclusion grounds
+==== Situation
+
+The Economic Operator answers “no” to all the national grounds; thus meaning that it has not breached the national law.
+
+
+[.text-center]
+image::Mock_Up69.png[alt="UML_representation", width="800", height="1100"]
+
+==== Data Structure
+
+[.text-center]
+image::Mock_Up70.png[alt="UML_representation", width="800", height="400"]
+
+Notice that in this situation the Criterion has “national sub-criteria” (UBL-2.2 component cac:SubTenderingCriterion)
+
+XML instance copied from the Request document
+
+See XML code in section “5.5.4 Example 3: Purely national Exclusion grounds”.
+
+==== Answer provided by the EO
+
+[source,xml]
+----
+	<!-- EO answers -->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID>e14a3f2d-ba93-4f6c-938f-50a373f7636c</cbc:ValidatedCriterionRequirementID>
+	<cac:ResponseValue><cbc:ResponseIndicator>false</cbc:ResponseIndicator></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID>b780d1a1-1c2d-4c0d-94e6-0a0170c64bba</cbc:ValidatedCriterionRequirementID>
+	<cac:ResponseValue><cbc:ResponseIndicator>false</cbc:ResponseIndicator></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID>4997b235-1e9b-4d42-83f9-e5e2a949f79f</cbc:ValidatedCriterionRequirementID>
+	<cac:ResponseValue><cbc:ResponseIndicator>false</cbc:ResponseIndicator></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+----

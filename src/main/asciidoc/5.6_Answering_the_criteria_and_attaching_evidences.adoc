@@ -1,0 +1,10 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Answering the criteria and attaching evidences
+
+This section provides fragments of XML code aimed at illustrating how the criteria expressed in the Request document (and also replicated in the Response document) MUST be answered. Beware that:
+
+*	One answer is an instance of the UBL-2.2 element cac:TenderingCriterionResponse (see section “6.3.2 How to respond a Criterion ” for more details on this element).
+*	Each answer responds to a concrete Criterion Property (UBL-2.2 element cac:TenderingCriterionProperty) by indicating the Identifier the Property has in the Request document (and which was originated by the e-Certis system at Criterion definition time);
+*	One answer MAY be associated to one or more evidences. Use the UBL-2.2. element cac:EvidenceSupplied to refer to the evidences attached to the Response document. See also section “6.3.3 Evidences “ for more details on the component cac:Evidence

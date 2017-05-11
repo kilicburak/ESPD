@@ -1,0 +1,124 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Information about the Procurement Procedure
+
+Three basic data are required by the ESPD-EDM to identify the procurement procedure to which the ESPD belongs: the title, a short description and the file (i.e. case) reference number attributed by the Contracting Authority to the procurement procedure:
+
+[.text-center]
+
+.information about the procurement procedure, mock-up
+image::Mock_Up2.png[alt="UML_representation", width="700", height="600"]
+
+To represent the information about a procurement procedure UBL-2.2 uses the common aggregate component cac:ProcurementProject. For the file (case) reference number, use the component /QualificationApplicationRequest/cbc:ContractFolderId. 
+
+The additional information about is collected in a cac:TenderingCriterion component. Please see section “5.4.3 Example: Information about the Lots” for details and examples.
+
+|===
+|*Element Name*|*cac:ProcurementProject*
+|*ESPD Use*|Used to identify the procurement procedure.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationRequest/cac:ProcurementProject
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_5.png[alt="UML_representation", width="500", height="700"]
+|===
+|===
+|*UBL Definition*|An overall definition of the procurement procedure.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|cbc:Name
+|Text
+|0..n
+|1
+|The name of the procurement procedure.
+|cbc:Description
+|Text
+|0..n
+|0..1
+|Text describing the procurement procedure.
+|===
+
+[.text-left]
+==== Example 1: instantiation of the file reference number
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<QualificationApplicationRequest 
+xmlns="urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationRequest-2" 
+
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:QualificationApplicationRequest-2 ../xsdrt/main/UBL-QualificationApplicationRequest-2.2-Pre-award.xsd">
+
+...
+
+<cbc:ContractFolderID schemeAgencyID=" UK-SCT">SCT-20170121-HS-01234</cbc:ContractFolderID>
+...
+
+</QualificationApplicationRequest>
+----
+
+[.text-left]
+==== Example 2: instantiation of the name and description of the procurement procedure
+
+[source,xml]
+----
+<cac:ProcurementProject>
+	<cbc:Name>United Kingdom-London: Health services</cbc:Name>
+	<cbc:Description>Provision of Occupational Health Services.</cbc:Description>
+</cac:ProcurementProject>
+----
+
+[.text-left]
+==== Example 3:instantiation of the CPVs
+
+[cols="1a"]
+|===
+|SELF-CONTAINED ESPD FEATURE|In order for the CA to be able to assess the classification of the EO, the CA may need to provide one or several CPV codes for the procurement procedure in the Request document. Later on, the CA will access the pre-qualification system and verify that that EO is classified for the CPV codes that apply to the procurement procedure.|
+|===
+
+The ESPD-EDM Criterion (UBL-2.2 component TenderingCriterion) is at the very core of the ESPD Exchange Data Model. It defines a flexible data structure allowing for the expression of any of the Exclusion and Selection criteria specified in the ESPD Implementing Regulation (1) (the “Regulated” ESPD) and beyond (i.e. all the requirements and information that may be specified by the Contracting Authority in a “Self-contained” ESPD).
+
+In the case of the ESPD this component can be used by the CA to inform the Economic Operators about conditions and requirements that are either specific to the MS or the procurement procedure. 
+
+In this version of the ESPD-EDM this resource is used to express the Common Procurement Vocabulary (CPV) codes that describe the services or works of a procurement procedure. See also subsection about the lots, below, for a similar situation and example.
+
+The XML example below shows how to implement this Criterion in the Request document:
+
+[source,xml]
+----
+<cac:TenderingCriterion>
+	<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">fab9ab25-9b2a-43c0-ab46-c3b2bd4859a1</cbc:ID>
+	<cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CRITERION.OTHER.PROCUREMENT_PROCEDURE_CPV</cbc:CriterionTypeCode>
+	<cbc:Name> CPVs</cbc:Name>
+	<cbc:Description>Set of CPVs describing the activities or goods for this procurement procedure.</cbc:Description>
+	<cac:TenderingCriterionPropertyGroup>
+		<cbc:ID schemeID="CriteriaID" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0"> 74639b31-c397-4b96-ad77-9ebc4d05d460</cbc:ID>
+		<cac:TenderingCriterionProperty>
+			<cbc:ID schemeID="CriteriaID" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">026e5c77-4a82-4a8a-a986-91966fed6ad8</cbc:ID>
+			<cbc:Description>CPV</cbc:Description>
+			<cbc:ValueDataTypeCode  listID="ResponseDataType" listAgencyName="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+<cac:ExpectedCode>13.45</cac:ExpectedCode>
+		</cac:TenderingCriterionProperty>
+		<cac:TenderingCriterionProperty>
+			<cbc:ID schemeID="CriteriaID" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">026e5c77-4a82-4a8a-a986-91966fed6ad8</cbc:ID>
+			<cbc:Description>CPV</cbc:Description>
+			<cbc:ValueDataTypeCode  listID="ResponseDataType" listAgencyName="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+<cac:ExpectedCode>13.46</cac:ExpectedCode>
+		</cac:TenderingCriterionProperty>
+	</cac:TenderingCriterionPropertyGroup>
+</cac:TenderingCriterion> 
+----
+
+
+
+

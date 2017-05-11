@@ -1,0 +1,13 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+===  Exclusion Criteria
+
+Exclusion criteria may be grouped in several different categories. The figure below is intended to identify and list these categories for the Exclusion criteria (branches in text boxes), and specific subgroups within each category (leaves in text without boxes):
+
+[.text-center]
+.Exclusion criteria taxonomy
+image::Mock_Up6.png[alt="UML_representation", width="700", height="500"]
+
+The following subsection, below, illustrates how to implement these exclusion criteria.	
+  

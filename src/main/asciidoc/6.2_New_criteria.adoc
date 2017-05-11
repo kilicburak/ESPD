@@ -1,0 +1,19 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== New Criteria
+
+Some new criteria have been added to extend the ESPD Exchange Data Model, namely to cater for the Self-contained mode. New criteria are always added to the end of the “CriteriaTaxonomy” spread-sheet. See this list to study the data structure of these criteria.
+
+!===
+|*Criterion*|*ID*|*Use in ESPD*
+|*Requirement on lots*
+|1e430aa8-2875-4269-a751-8124549019c6
+|CA informs the EO about the lots in this Procurement Procedure.
+|*Procurement Procedure CPVs*
+|fab9ab25-9b2a-43c0-ab46-c3b2bd4859a1
+|CA informs the EO about the activities to perform of goods to deliver in this Procurement Procedure.
+|*SME*
+|fab9ab25-9b2a-43c0-ab46-c3b2bd4859a1
+|Information gathered by the MS and EU institutions namely for statistical purposes.
+!===

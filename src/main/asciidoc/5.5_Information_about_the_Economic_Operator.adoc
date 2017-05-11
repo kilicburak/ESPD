@@ -1,0 +1,49 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Information about the Economic Operator
+
+The ESPD requests a wide range of data on the Economic Operator. The first block information that the Economic Operator needs to provide is basic data about itself. The mock-up below shows a possible representation of the fields required in the Response document.
+
+[.text-center]
+.Basic data about the Economic Operator
+image::Mock_Up46.png[alt="UML_representation", width="900", height="600"]
+
+To instantiate this data in the XML Response use the UBL-2.2 cac:EconomicOperatorParty component:
+
+|===
+|*Element Name*|*cac:EconomicOperatorParty*
+|*ESPD Use*|The ESPD-EDM uses this component to provide information about the Economic Operator, its qualifications and representatives.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationResponse/cac:EconomicOperatorParty
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_14.png[alt="UML_representation", width="700", height="400"]
+
+|===
+|===
+|*UBL Definition*|
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*|
+
+|*cac:QualifyingParty*
+|Complex
+|0..n
+|0..n
+|The party qualifying this Economic Operator. ESPD: e.g. official qualification service providers in the Member States.
+|*cac:EconomicOperatorRole*
+|Complex
+|0..1
+|1
+|The role of the party in a tender consortium.
+|*cac:Party*
+|Complex
+|1
+|1
+|The party information about the Economic Operator in a tender.
+
+|===

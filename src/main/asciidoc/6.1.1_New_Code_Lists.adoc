@@ -1,0 +1,198 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== New Code Lists
+
+See the distribution packages for the complete spread-sheet with all the Code Lists (folder /dist/cl/xls), and the Genericode files ((folder /dist/cl/gc).
+
+==== EORole Code List
+
+!===
+|*ShortName*|EORole
+|*LongName*|Economic Operator Role
+|*ListIDe*|EORole
+|*Version*|2.0.0
+|*CanonicalUri*|Placeholder
+|*CanonicalVersionUri*|Placeholder
+|*LocationUri*| 
+|*AgencyLongName*|DG GROW (European Commission)
+|*AgencyIdentifier*|EU-COM-GROW
+|*Locale*|en
+!===
+
+!===
+|*Code*|*Value*|*Description*
+|*SCLE*
+|Sole contractor/Lead entity
+|Sole entity or, in case of Consortium, Joint Venture or other types of groups, the leader of the group. This role has to produce a complete ESPD.
+|*GM*
+|GM
+|Member (not leader) of the Consortium, Joint Venture or other type of group. This role has to produce a complete ESPD except Part II A - b (identify procurers).
+|*OERON*
+|Other entity (relied upon)
+|Entity on which the main contractor, the group or another subcontractor relies in order to meet the selection criteria. This role has to produce a complete ESPD except Part II A - b (identify procurers).
+|*OENRON*
+|Other entity (not relied upon)
+|Entity on which the main contractor, the group or another subcontractor does not rely in order to meet the selection criteria. This role has to produce an ESPD without Part IV and Part V.
+!===
+
+[.text-left]
+====  JurisdictionLevel Code List
+
+
+!===
+|*ShortName*|JurisdictionLevel
+|*LongName*|JURISDICTION LEVEL
+|*ListIDe*|JurisdictionLevel
+|*Version*|2.0.0
+|*CanonicalUri*|Placeholder
+|*CanonicalVersionUri*|Placeholder
+|*LocationUri*| 
+|*AgencyLongName*|DG GROW (European Commission)
+|*AgencyIdentifier*|EU-COM-GROW
+|*Locale*|en
+!===
+
+!===
+|*Code*|*Value*
+|*INT*
+|International
+|*EU*
+|European Union
+|*MS*
+|National (Member State)
+|*REGIONAL*
+|Regional (e.g. Länder, Autonomous Government, etc.)
+|*LOCAL*
+|Local (e.g. municipal)
+!===
+
+==== QualificationApplicationType
+
+
+!===
+|*ShortName*|QualificationApplicationType
+|*LongName*|QUALIFICATION APPLICATION TYPE
+|*ListIDe*|QualificationApplicationType
+|*Version*|2.0.0
+|*CanonicalUri*|Placeholder
+|*CanonicalVersionUri*|Placeholder
+|*LocationUri*| 
+|*AgencyLongName*|DG GROW (European Commission)
+|*AgencyIdentifier*|EU-COM-GROW
+|*Locale*|en
+!===
+
+!===
+|*Code*|*Value*|*Description*
+|*REGULATED*
+|Regulated
+|The contents are the ones specified in the Commission Implementing Regulation (EU) 2016/7. References to the contract documents are made.
+|*SELFCONTAINED*
+|Self-contained
+|Requirements additional to the ones specified in the Commission Implementing Regulation (EU) 2016/7 are added by the contracting authority or entity. No references to the contract notice nor other contract documents. All necessary information is contained or provided by trusted service providers.
+!===
+
+==== NumberOfLotsCode
+
+!===
+|*ShortName*|NumberOfLotsCode
+|*LongName*|NUMBER OF LOTS CODE
+|*ListIDe*|  
+|*Version*|2.0.0
+|*CanonicalUri*|Placeholder
+|*CanonicalVersionUri*|Placeholder
+|*LocationUri*| 
+|*AgencyLongName*|DG GROW (European Commission)
+|*AgencyIdentifier*|EU-COM-GROW
+|*Locale*|en
+!===
+
+!===
+|*Code*|*Value*|*Description*
+|*ALL*
+|All lots
+|The economic operator can tender to all the lots of this procurement procedure.
+|*MAX*
+|Maximum number of lots
+|The economic operator can tender only to a maximum number of lots established by the contracting authority.
+|*ONE*
+|Only one lot
+|The economic operator can tender only to one of the lots into which this procurement procedure is divided.
+!===
+
+==== EvaluationMethodType
+
+!===
+|*ShortName*|EvaluationMethodType
+|*LongName*|EVALUATION METHOD TYPE
+|*ListIDe*|EvaluationMethodType 
+|*Version*|2.0.0
+|*CanonicalUri*|Placeholder
+|*CanonicalVersionUri*|Placeholder
+|*LocationUri*| 
+|*AgencyLongName*|DG GROW (European Commission)
+|*AgencyIdentifier*|EU-COM-GROW
+|*Locale*|en
+!===
+
+!===
+|*Code*|*Value*
+|PASSFAIL
+|Pass or Fail method.
+|WEIGHTED
+|The Criterion is weighted.
+!===
+
+==== EOIDType
+
+!===
+|*ShortName*|EOIDType
+|*LongName*|EOIDType
+|*ListIDe*|EORoleType
+|*Version*|2.0.0
+|*CanonicalUri*|Placeholder
+|*CanonicalVersionUri*|Placeholder
+|*LocationUri*| 
+|*AgencyLongName*|DG GROW (European Commission)
+|*AgencyIdentifier*|EU-COM-GROW
+|*Locale*|en
+!===
+
+!===
+|*Code*|*Value*
+|NATIONAL
+|National Identifier
+|VAT
+|VAT number
+|LEI
+|Legal Entity Identifier
+|BRIS
+|Business Registry European Unique Identifier
+|DUNS
+|Duns & Bradstreet number
+!===
+
+====  ConfidentialityLevel
+
+!===
+|*ShortName*|ConfidentialityLevel
+|*LongName*|CONFIDENTIALITY LEVEL
+|*ListIDe*|ConfidentialityLevel
+|*Version*|2.0.0
+|*CanonicalUri*|Placeholder
+|*CanonicalVersionUri*|Placeholder
+|*LocationUri*| 
+|*AgencyLongName*|DG GROW (European Commission)
+|*AgencyIdentifier*|EU-COM-GROW
+|*Locale*|en
+!===
+
+!===
+|*Code*|*Value*
+|CONFIDENTIAL
+|Confidential
+|PUBLIC
+|Public
+!===
+

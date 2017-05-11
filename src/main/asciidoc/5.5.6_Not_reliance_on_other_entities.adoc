@@ -1,0 +1,22 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Not reliance on other entities
+
+!===
+|*SELF-CONTAINED ESPD FEATURE*|
+
+For those entities that the Economic Operator works with but does not rely on their capacities to meet the selection criteria, the Economic Operator MUST provide information about those entities.
+!===
+
+The mock-up below represents the information that needs to be provided. Observe that the group of data requested per entity MUST be provided several times:
+
+[.text-center]
+.Not reliance on the capacities of other entites, mock-up
+image::Mock_Up54.png[alt="UML_representation", width="1100", height="900"]
+
+[.text-center]
+image::Diagram_20.png[alt="UML_representation", width="800", height="400"]
+
+In terms of XML implementation this case is identical to the previous one (Reliance on other entites). Please see that XML example above.
+

@@ -1,0 +1,19 @@
+ifndef::imagesdir[:imagesdir: images]
+
+== *XML Implementation Guide*
+'''
+
+include::1.0_RESP_Introduction_Includes.adoc[]
+
+include::2.0_Main_differences_with_the_previous_version.adoc[]
+
+include::3.0_The_Qualification_Application_Request_document_Includes.adoc[]
+
+include::4.0_The_ESPD_EDM_Criteria.adoc[]
+
+include::5.0_The_Qualification_Application_Response_document.adoc[]
+
+include::6.0_Annex_I_Mapping_Version_1.0.2_and_Version_2.0.0.adoc[]
+
+include::8_Cited_Work.adoc[]
+

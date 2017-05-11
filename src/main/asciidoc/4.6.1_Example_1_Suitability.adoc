@@ -1,0 +1,69 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 1: Suitability
+
+The Contracting Authority needs to be able to assess the suitability of the Economic Operators (EO) for which the CA will require to verify if the EOs are enroled in a relevant professional register or a trade register and, in the case of service contracts, the EO needs to be member of a particular organisation or needs a particular authorisation.
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|Suitability:
+
+*   Name of the register The name of the register or the organisation the EO must be part of;
+
+*	The URL of the register;
+
+*	When the procurement procedure is divided into lots, the CA will need to identify the lots that apply to Criterion Properties (e.g. to each enrolment);
+
+* 	For each register or organisation required by the CA, the EO will need to provide an answer YES/NO:
+
+**  If the answer is YES, the EO will be required to provide the registration number.
+
+**  If the answer is NO, the EO will be able to provide the reasons why it is not registered.
+!===
+
+[.text-left]
+==== CA view
+
+The mock-up below represents the requirements the CA should be able to specify for a Suitability Criterion without lots:
+
+[.text-center]
+.Suitability (not lots), CA-view, mock-up
+image::Mock_Up17.png[alt="UML_representation", width="900", height="900"]
+
+This other mock-up represents the same situation when the Procurement Procedure is divided into lots. 
+
+Notice that:
+
+*  One set of lots per requirement: The Contracting Authority (CA) MAY request that the EO is registered in one or multiple registers. Hence the term “requirement”, in the mock-up. One requirement in this case is a group of Criterion Properties made of one or more set of register-related data and the lots for which these data make sense (can be applied to). This behaviour of “one set of lots per requirement” is regular for all the Reference citeria, and for those Selection criteria where the allocation of lots to a set of Criterion Properties make sense;
+
+*  The CA MAY specify multiple requirements and, per each requirement, groups of registers per set of lots.
+
+[.text-center]
+.Suitability (not lots), CA-view, mock-up
+image::Mock_Up18.png[alt="UML_representation", width="900", height="1400"]
+
+[.text-left]
+==== EO view
+
+The requirements specified by the Contracting Authority are to be shown to the Economic Operator: lots, register name and register URL. This mock-up below provides a possible representation for the EO point-of-view. Notice that the EO only needs to answer “yes” or “no” per each register, and in the negative case to provide a reason justifying why it is not registered. Notice that:
+
+*  Per each register the EO MAY provide an online reference to additional information.
+
+[.text-center]
+.Suitability (not lots), EO-view, mock-up
+image::Mock_Up19.png[alt="UML_representation", width="1200", height="1200"]
+
+[.text-left]
+==== Data Structure
+
+The data structure for both the requirements and the expected responses follow, extracted from the “Criteria Taxonomy” spread-sheet. Beware that the group of Criterion Properties set by the CA (C29/G1) may be instantiated n times.
+
+[.text-center]
+image::Mock_Up20.png[alt="UML_representation", width="800", height="600"]
+
+==== XML example
+
+[TODO:]
+
+

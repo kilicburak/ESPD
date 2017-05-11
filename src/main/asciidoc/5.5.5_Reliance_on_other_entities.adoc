@@ -1,0 +1,28 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Reliance on other entities
+
+!===
+|*SELF-CONTAINED ESPD FEATURE*|
+
+If the Economic Operator relies on the capacities of other entites (e.g subcontractors) to meet the selection criteria, it MUST provide information about those entities.
+!===
+	
+The mock-up below represents the information that needs to be provided. Observe that the group of data requested per entity MUST be provided several times:
+
+*	Name of the entity relied on;
+*	Identifier and type of identifier of the entity;
+*	Activity of the entity (for this specific procedure);
+*	The lots in which the entity participates in.
+
+.Reliance on the capacities of other entites, mock-up
+image::Mock_Up53.png[alt="UML_representation", width="900", height="1100"]
+
+The Criterion data structure is represented in the figure below, extracted from the Criteria Taxonomy spread-sheet. As in the previous case, beware that: 
+
+.	The sub-group requesting the data about the entity may be repeated several times, as many as economic operators participate in the consortium;
+.	Inside the previous sub-group, the sub-sub-group requesting the ID and ID type of the entity may be repeated several times.
+
+
+	

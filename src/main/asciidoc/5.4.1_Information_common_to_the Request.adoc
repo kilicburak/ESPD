@@ -1,0 +1,12 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Information common to the Request
+
+Some information components in the Response document are identical to the ones in the Request. That is the case for the information about the publication of the CN, the identity of the procurer and information about the procurement procedure. The figure below shows a GUI mock-up for these three blocks of data. Notice that they’re identical to the ones in the Request. The UBL-2.2 components used in the Response to hold this data are also the same as the ones used for the Request (as they are reused from the UBL-2.2 Common Aggregate Components and Common Basic Components libraries).
+
+For examples on how to instantiate this elements in XML please refer to section “4.4 The main elements of the Request document”.
+
+[.text-center]
+.Information blocks common to the Request and the Response
+image::Mock_Up45.png[alt="UML_representation", width="700", height="700"]

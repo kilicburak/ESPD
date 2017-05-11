@@ -1,0 +1,13 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Global view
+
+The figure below provides a global view of the UBL-2.2 Qualification Application Response document (it has been split in two portions to increase its readability).
+This structure of this document is practically identical to the one for the Qualification Application Request, plus the following additions (and considerations):
+
+[.text-center]
+image::Mock_Up43.png[alt="UML_representation", width="500", height="900"]
+[.text-center]
+.QualificationApplicationResponse Schema, global view
+image::Mock_Up44.png[alt="UML_representation", width="500", height="900"]

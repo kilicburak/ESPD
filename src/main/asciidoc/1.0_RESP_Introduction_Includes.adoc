@@ -1,0 +1,27 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-center]
+== Abstract
+
+[.text-left]
+This document describes the new Exchange Data Model, Version 2.0.0, of the European Single Procurement Document (ESPD-EDM) and provides rules and examples for its implementation as XML document instances.
+Where needed it also mentions the differences from the previous version (version 1.0.2).
+
+
+[.text-center]
+== Conventions
+
+[.text-left]
+* Tables with the caption NEW! contain details about one component of the model that is totally new, has changed or has introduced new elements that did not exist in the previous model;
+* XML components and files are written using the font Courier New to differentiate them from usual concepts with similar or identical names;
+* Essential business Concepts, such as Procurement Procedure, Economic Operator, Contracting Authority, Criterion, Criterion Property, etc. are capitalised;
+
+[.text-center]
+== I. Introduction
+
+[.text-left]
+include::1.1_CMMN_Introduction_Context.adoc[]
+
+include::1.2_The_ESPD_Service_and_e-Certis.adoc[]
+
+include::1.3_Objectives_of_the_Document.adoc[]

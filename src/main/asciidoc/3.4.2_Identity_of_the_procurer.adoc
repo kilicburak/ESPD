@@ -1,0 +1,78 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Identity of the procurer
+
+The ESPD-EDM asks for a few data about the procurer (i.e. the Contracting Authority, body or entity). As a matter of fact it only requests two data to identify the procurer, its official name and the country. The figure below represents a GUI interface with the data required by the ESPD-EDM:
+
+[.text-center]
+.Information about the contracting entity, mock-up
+image::Mock_Up.png[alt="UML_representation", width="700", height="400"]
+
+The UBL-2.2 model provides a component that fits that purpose, the common aggregate component ContractingParty. 
+
+|===
+|*Element Name*|*cac:ContractingParty*
+|*ESPD Use*|Used to hold the data about the contracting body, authority or entity
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationRequest/cac:ContractingParty
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_3.png[alt="UML_representation", width="600", height="800"]
+[.text-center]
+image::Diagram_4.png[alt="UML_representation", width="600", height="300"]
+|===
+|===
+|*UBL Definition*|The contracting party. In the case of the ESPD the contracting entity, body or authority.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|cac:/Party/cac:PartyName +/cbc:Name
+|Text
+|0..1
+|1
+|The official name of the Contracting Authority.
+|cac:/Party/cac:PostalAddress +/cac:Country/cbc:IdentificationCode
+|Code
+|0..1
+|1
+|A code signifying the country of the Contracting Authority.
+|cac:/Party/cac:PostalAddress +/cac:Country/cbc:Name
+|Text
+|0..1
+|0..1
+|The name of the country.
+|===
+
+[.text-left]
+==== Example
+
+
+[source,xml]
+----
+<cac:ContractingParty>
+  <cac:Party>
+    <cac:PartyName>
+      <cbc:Name>Instituto Nacional de Estatística</cbc:Name>
+    </cac:PartyName>
+    <cac:PostalAddress>
+      <cac:Country>
+        <cbc:IdentificationCode listID="CountryCodeIdentifier" listAgencyID="ISO" <!--1--> 
+        listVersionID="1.0">PT</cbc:IdentificationCode> <!--2-->
+      </cac:Country>
+    </cac:PostalAddress>
+    <cac:Contact/>
+  </cac:Party>
+</cac:ContractingParty>	
+----
+[cols="1a"]
+|===
+|*COMMENTS*|
+<1>  The ESPD-EDM requires the use the ISO 3166-1 alpha 2 country code identifier Code List (See Code List “CountryCodeIdentifier”);
+<2>  Beware that the ESPD-EDM requires the specification of the attributes listID, listAgencyID and listVersionID for all the codes.
+|===

@@ -1,0 +1,93 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Minimum set of elements for the Request used in the ESPD-EDM
+
+|===
+|*Document Name*|*QualificationApplicationRequest*
+|*Definition*|A document issued by a procurement organization to specify the criteria for an Economic Operator to be admitted to or excluded from the tendering process
+|*File*|dist/main/xsdrt/UBL-QualificationApplicationRequest-2.2-Pre-award.xsd
+|===
+|===
+|*Components*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:UBLVersionID*
+|Identifier
+|0..1
+|1
+|Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+
+|*cbc:CustomizationID*
+|Identifier
+|0..1
+|1
+|Identifies a user-defined customization of UBL for a specific use. ESPD: use the current version of the ESP-EDM “2.0.0”. See XML example below.
+
+|*cbc:ID*
+|Identifier
+|0..1
+|1
+|An identifier for this document, assigned by the sender.
+
+|*cbc:UUID*
+|Identifier
+|0..1
+|1
+|A universally unique identifier for an instance of this document.
+
+|*cbc:ContractFolderID*
+|Identifier
+|1
+|1
+|An identifier, assigned by the sender, for the process file (i.e., record) to which this document belongs.
+
+|*cbc:IssueDate*
+|Date
+|1
+|1
+|The date, assigned by the sender, on which this document was issued.
+
+|*cbc:IssueTime*
+|Time
+|0..1
+|0..1
+|The time, assigned by the sender, at which this document was issued.
+
+|*cbc:QualificationApplicationTypeCode*
+|Code
+|0..1
+|1
+|A code specifying the type of the Qualification Application.
+
+|*cac:ContractingParty*
+|Complex
+|1..n
+|1
+|The Contracting Authority or entity in charge of the procurement procedure.
+
+|*cac:ProcurementProject*
+|Complex
+|0..1
+|1
+|An overall definition of this procurement procedure.
+
+|*cac:ProcurementProjectLot*
+|Complex
+|0..n
+|0..n
+|One of the procurement project lots into which this contract can be split.
+
+|*cac:TenderingCriterion*
+|Complex
+|0..n
+|1..n
+|Exclusion and selection criteria.
+
+|*cac:AdditionalDocumentReference*
+|Complex
+|0..n
+|1..n
+|A reference to an additional document associated with this document.
+
+
+|===

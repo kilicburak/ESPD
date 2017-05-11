@@ -1,0 +1,10 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+===	The ESPD-EDM Criteria Taxonomy
+
+As said, the ESPDEDM defines different types of criteria, namely exclusion and selection criteria. It also defines criteria to capture and evaluate other general information about the Economic Operators (e.g. number of employees of the company, for statistical purposes).
+
+The whole set of ESPD-EDM criteria is collected in a spread-sheet and is organised as a taxonomy. This ESPD-EDM Criteria Taxonomy file is distributed jointly with this documentation and is also online and publicly accessible footnote:[https://github.com/ESPD]. 
+
+For the purposes of the ESPD the two main branches of this taxonomy are the Exclusion grounds and the selection criteria. Developers in charge of the implementation of the exchange of ESPD documents should use the Criteria Taxonomy spread-sheet mentioned above (file /dist/cl/xls/CriteriaTaxonomy-2.0.0.xlsx). This file specifies the data structure of each Criterion, as well as the identifiers, types and descriptions of the Criterion elements (a.k.a. “Criterion Properties”).

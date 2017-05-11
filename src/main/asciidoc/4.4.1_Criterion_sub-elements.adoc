@@ -1,0 +1,64 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Criterion sub-elements
+
+==== Legislation
+
+Beware that:
+
+*  the previous ESPD-EDM versions named this component LegislationReference. 
+*  UBL-2.2 defines an additional element that is not currently used in the ESPD-EDM (JurisdictionRegionAddress) but that could be found useful by the MS.
+
+The table below lists the minimum set of data used in the ESPD-EDM to inform about the legislation related to a Criterion. For details on the rest of unused UBL-2.2 elements see the spread-sheet /dist/mod/UBL-Entities-2.2-Pre-award.xls.xlsx.
+
+|===
+|*Element Name*|*cac:Legislation*
+|*ESPD Use*|Used to specify the Legislation(s) where the Criterion is defined or mentioned.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationRequest/cac:TenderingCriterion/cac:Legislation
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_7.png[alt="UML_representation", width="700", height="500"]
+|===
+|===
+|*UBL Definition*|The legislation reference for the Criterion.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:ID*
+|Identifier
+|0..1
+|1
+|An identifier to refer to the legislation. ESPD: If a DOI (Digital Object Identifier) exists for this legislation please use it here.
+|*cbc:Title*
+|Text
+|0..n
+|1..n
+|The title of the legislation.
+|*cbc:Description*
+|Text
+|0..n
+|1..n
+|The textual description of the legislation.
+|*cbc:JurisdictionLevel*
+|Text
+|0..n
+|1
+|The jurisdiction level for the legislation. 
+|*cbc:Article*
+|Text
+|0..n
+|0..n
+|The article of the legislation.
+|*cbc:URI*
+|URI
+|0..n
+|0..1
+|A URI to the legislation.
+|===

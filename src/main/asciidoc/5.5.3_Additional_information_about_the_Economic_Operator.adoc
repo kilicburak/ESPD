@@ -1,0 +1,266 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Additional information about the Economic Operator
+
+==== SME?
+
+The MS or other EU and international institutions may be interested in studying the type of companies that participate in public procurement. The ESPD-EDM provides a Criterion data structure to capture very basic data about the company, namely the number of employees and its yearly turnover. One of the objectives of the study is to analyse the participation of SMEs in public procurement. 
+Beware that this Criterion is also part of the Request document, as the rest of criteria.
+The structure of this Criterion is simple, a question is asked, and in case of an affirmative response, two data are collected:
+
+[.text-center]
+image::Mock_Up48.png[alt="UML_representation", width="900", height="500"]
+
+The fragment of XML below illustrates how this is implemented in the ESPD-EDM:
+
+[source,xml]
+----
+<cac:TenderingCriterion>
+		<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">fab9ab25-9b2a-43c0-ab46-c3b2bd4859a1</cbc:ID>
+		<cbc:Name>SME</cbc:Name>
+		<cbc:Description>Is the economic operator a Micro, Small or Medium-Sized Enterprise?</cbc:Description>
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">74639b31-c397-4b96-ad77-9ebc4d05d460</cbc:ID>
+			<cac:TenderingCriterionProperty>
+				<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">2f15716c-1cf8-4017-8863-9f1dc600eb70</cbc:ID>
+				<cbc:Description>Please provide:</cbc:Description>
+				<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyName="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">2f15716c-1cf8-4017-8863-9f1dc600eb70</cbc:ID>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">2f15716c-1cf8-4017-8863-9f1dc600eb70</cbc:ID>
+					<cbc:Description>Number of employees</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyName="EU-COM-GROW" listVersionID="2.0.0">QUANTITY</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>				
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">2f15716c-1cf8-4017-8863-9f1dc600eb70</cbc:ID>
+					<cbc:Description>Yearly turnover</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyName="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>				
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>
+	</cac:TenderingCriterion>
+----
+==== Procurement reserved
+
+As shown in previous examples the cac:TenderingCriterion component permits expressing many different data structures. This is also the case in the ESPD-EDM to require additional information about the Economic Operator, as in this case:
+
+“Only in case the procurement is reserved: is the economic operator a sheltered workshop, a 'social business' or will it provide for the performance of the contract in the context of sheltered employment programmes?”
+
+The data structure and XML example follow:
+
+[.text-center]
+image::Mock_Up49.png[alt="UML_representation", width="900", height="500"]
+
+[source,xml]
+----
+<cac:TenderingCriterion>
+        <cbc:ID schemeID="CriteriaID" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">2043338f-a38a-490b-b3ec-2607cb25a017</cbc:ID>
+        <cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="1.0.2">CRITERION.OTHER.EO_DATA.SHELTERED_WORKSHOP</cbc:CriterionTypeCode>
+        <cbc:Name>Procurement reserved</cbc:Name>
+        <cbc:Description>Only in case the procurement is reserved: is the economic operator a sheltered workshop, a 'social business' or will it provide for the performance of the contract in the context of sheltered employment programmes?</cbc:Description>
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">6febbe4a-e715-427c-a2b1-19cfabadaef0</cbc:ID>
+			<cac:TenderingCriterionProperty>
+                <cbc:ID schemeID="CriterionRelatedIDs" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">7f18c64e-ae09-4646-9400-f3666d50af51</cbc:ID>
+                <cbc:Description>Your answer?</cbc:Description>
+                <cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">INDICATOR</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">7f18c64e-ae09-4646-9400-f3666d50af51</cbc:ID>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeID="CriterionRelatedIDs" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">4e552658-d532-4770-943b-b90efcc9788d</cbc:ID>
+					<cbc:Description>What is the corresponding percentage of disabled or disadvantaged workers?</cbc:Description>
+                <cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">PERCENTAGE</cbc:ValueDataTypeCode>				
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeID="CriterionRelatedIDs" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">e01d0929-c7a9-455a-aaf9-e1f7cd966336</cbc:ID>
+					<cbc:Description>If required, please provide details on whether the employees concerned belong to a specific category of disabled or disadvantaged workers?</cbc:Description>
+                <cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DESCRIPTION</cbc:ValueDataTypeCode>				
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>		
+</cac:TenderingCriterion>
+----
+==== Qualification of Economic Operators
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|
+
+In the Response document, the Economic Operator (EO) MAY provide the Pre-Qualification System (PQS) the EO is registered on from a list retrieved from e-Certis (in case the EO is registered on several pre-qualification systems, it will need to choose the one that applies to this particular procurement procedure). The EO is also required to provide the identification of the EO in the selected pre-qualification system.
+
+!===
+
+The mock-up below shows a possible GUI requesting this type of information. Notice that the Economic Operator MAY provide more than one Pre-Qualification System:
+
+[.text-center]
+.Qualifications of the Economic Operator
+image::Mock_Up50.png[alt="UML_representation", width="1100", height="900"]
+
+To complete all the information requested the XML instance will have to:
+
+. Instantiate a Criterion data structure (as in the previous version, but simplified, see also Annex I, section “1.3 Updated criteria”):
+
+[.text-center]
+image::Mock_Up51.png[alt="UML_representation", width="1100", height="400"]
+
+. Instantiate as many UBL-2.2 cac:QualifyingParty components  (inside cac:EconomicOperatorParty) as PQS need to be referred to;
+
+The following table shows the UBL-2.2. cac:QualifyingParty component and lists the set of elements requested in the ESPD-EDM:
+
+|===
+|*Element Name*|*cac:QualifyingParty*
+|*ESPD Use*|The ESPD-EDM uses this component to specify the information about Qualifications of the EO.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationResponse/cac:EconomicOperatorParty/cac:QualifyingParty
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_17.png[alt="UML_representation", width="600", height="600"]
+
+
+|===
+|===
+|*UBL Definition*|
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*|
+
+|*cac:PartyIdentification*
+|Complex
+|0..n
+|1..n
+|An identifier for this party. ESPD: multiple identifiers may be provided. Compulsory use of the attributes of the Identifier to specify the issuer and pattern of the Identifier (see example below).
+|*cbc:TendererID*
+|Identifier
+|0..1
+|1
+|The Identifier of the Economic Operator in the pre-qualification system.
+|*cac:CompletedTask*
+|Complex
+|0..n
+|0..n
+|A former task completed by this qualifying party. ESPD: use this element  to state the references on which the registration or certification is based, and, where applicable, the classification obtained in the official list.
+
+|*cac:Party*
+|Complex
+|0..1
+|1
+|The qualifying party itself.
+
+|===
+
+==== Procurement reserved
+
+As shown in previous examples the cac:TenderingCriterion component permits expressing many different data structures. This is also the case in the ESPD-EDM to require additional information about the Economic Operator, as in this case:
+
+“Only in case the procurement is reserved: is the economic operator a sheltered workshop, a 'social business' or will it provide for the performance of the contract in the context of sheltered employment programmes?”
+
+The data structure and XML example follow:
+
+[.text-center]
+image::Mock_Up63.png[alt="UML_representation", width="700", height="400"]
+
+[source,xml]
+----
+<cac:TenderingCriterion>
+        <cbc:ID schemeID="CriteriaID" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">2043338f-a38a-490b-b3ec-2607cb25a017</cbc:ID>
+        <cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="1.0.2">CRITERION.OTHER.EO_DATA.SHELTERED_WORKSHOP</cbc:CriterionTypeCode>
+        <cbc:Name>Procurement reserved</cbc:Name>
+        <cbc:Description>Only in case the procurement is reserved: is the economic operator a sheltered workshop, a 'social business' or will it provide for the performance of the contract in the context of sheltered employment programmes?</cbc:Description>
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">6febbe4a-e715-427c-a2b1-19cfabadaef0</cbc:ID>
+			<cac:TenderingCriterionProperty>
+                <cbc:ID schemeID="CriterionRelatedIDs" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">7f18c64e-ae09-4646-9400-f3666d50af51</cbc:ID>
+                <cbc:Description>Your answer?</cbc:Description>
+                <cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">INDICATOR</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">7f18c64e-ae09-4646-9400-f3666d50af51</cbc:ID>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeID="CriterionRelatedIDs" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">4e552658-d532-4770-943b-b90efcc9788d</cbc:ID>
+					<cbc:Description>What is the corresponding percentage of disabled or disadvantaged workers?</cbc:Description>
+                <cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">PERCENTAGE</cbc:ValueDataTypeCode>				
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeID="CriterionRelatedIDs" schemeAgencyID="EU-COM-GROW" schemeVersionID="1.0">e01d0929-c7a9-455a-aaf9-e1f7cd966336</cbc:ID>
+					<cbc:Description>If required, please provide details on whether the employees concerned belong to a specific category of disabled or disadvantaged workers?</cbc:Description>
+                <cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DESCRIPTION</cbc:ValueDataTypeCode>				
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>		
+</cac:TenderingCriterion>
+----
+
+===== Qualification of Economic Operators
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|
+
+In the Response document, the Economic Operator (EO) MAY provide the Pre-Qualification System (PQS) the EO is registered on from a list retrieved from e-Certis (in case the EO is registered on several pre-qualification systems, it will need to choose the one that applies to this particular procurement procedure). The EO is also required to provide the identification of the EO in the selected pre-qualification system.
+!===
+
+The mock-up below shows a possible GUI requesting this type of information. Notice that the Economic Operator MAY provide more than one Pre-Qualification System:
+
+[.text-center]
+.Qualifications of the Economic Operator
+image::Mock_Up64.png[alt="UML_representation", width="900", height="600"]
+
+To complete all the information requested the XML instance will have to:
+
+.  Instantiate a Criterion data structure (as in the previous version, but simplified, see also Annex I, section “1.3 Updated criteria”):
+
+[.text-center]
+image::Mock_Up65.png[alt="UML_representation", width="700", height="400"]
+
+.  Instantiate as many UBL-2.2 cac:QualifyingParty components  (inside cac:EconomicOperatorParty) as PQS need to be referred to;
+
+The following table shows the UBL-2.2. cac:QualifyingParty component and lists the set of elements requested in the ESPD-EDM:
+
+|===
+|*Element Name*|*cac:QualifyingParty*
+|*ESPD Use*|The ESPD-EDM uses this component to specify the information about Qualifications of the EO.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationResponse/cac:EconomicOperatorParty/cac:QualifyingParty
+|===
+
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_21.png[alt="UML_representation", width="700", height="800"]
+|===
+
+|===
+|*UBL Definition*|
+|===
+
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:TendererID*
+|Identifier
+|0..1
+|1
+|The Identifier of the Economic Operator in the pre-qualification system.
+
+|*cac:CompletedTask*
+|Complex
+|0..n
+|0..n
+|A former task completed by this qualifying party. ESPD: use this element  to state the references on which the registration or certification is based, and, where applicable, the classification obtained in the official list.
+
+|*cac:Party*
+|Complex
+|0..1
+|1
+|The qualifying party itself.
+
+|===
+

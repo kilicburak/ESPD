@@ -1,0 +1,62 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-center]
+== V.The Qualification Application Response document
+
+[.text-left]
+The UBL-2.2 document equivalent to the ESPD Response document is the “Qualification Application Response”.
+This section describes and illustrates the main components of the document and provides guidelines on how to implement XML instances out of it.
+
+include::5.1_Global_view.adoc[]
+
+include::5.2_SPD-EDM_constraints_related_to_the_Response_document.adoc[]
+
+include::5.3_Minimum_set_of_elements_for_the_Response_document_used_in_the_ESPD-EDM.adoc[]
+
+include::5.3.1_XML_instantiation_of_the_basic_components_of_the_Qualification_Application_Request_exampl.adoc[]
+
+include::5.3.2_How_to_respond_a_Criterion.adoc[]
+
+include::5.3.3_Evidences.adoc[]
+
+include::5.4_The main_elements_of_the_Response document.adoc[]
+
+include::5.4.1_Information_common_to_the Request.adoc[]
+
+include::5.5_Information_about_the_Economic_Operator.adoc[]
+
+include::5.5.1_The_Economic_Operator_role.adoc[]
+
+include::5.5.2_The_Party-related_information.adoc[]
+
+include::5.5.3_Additional_information_about_the_Economic_Operator.adoc[]
+
+include::5.5.4_Participation_in_Consortia.adoc[]
+
+include::5.5.5_Reliance_on_other_entities.adoc[]
+
+include::5.5.6_Not_reliance_on_other_entities.adoc[]
+
+include::5.6_Answering_the_criteria_and_attaching_evidences.adoc[]
+
+include::5.6.1_Example_1_EO_specifies_the_lots_to_which_it_tenders.adoc[]
+
+include::5.6.2_Example_2_Payment_of_taxes.adoc[]
+
+include::5.6.3_Example_3_Turnovers.adoc[]
+
+include::5.6.4_Example_4_Financial_Ratios.adoc[]
+
+include::5.6.5_Example_5_References_and_confidentiality.adoc[]
+
+include::5.6.6_Example_6_Purely_national_exclusion_grounds.adoc[]
+
+
+
+
+
+
+
+
+
+

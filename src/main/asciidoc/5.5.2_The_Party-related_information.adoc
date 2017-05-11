@@ -1,0 +1,96 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== The Party-related information
+
+To hold the data about a legal entity or a natural person party, UBL-2.2 uses a very rich component “cac:Party”. The ESPD-EDM however only uses a small portion of its elements. The table below contains the complete representation of this UBL class and lists the set of elements used by the ESPD-EDM (the image has been split to enhance its quality and readability).
+
+|===
+|*Element Name*|*cac:Party*
+|*ESPD Use*|The ESPD-EDM uses this component to hold the basic components of a party, in this case the Economic Operator.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationResponse/cac:EconomicOperatorParty/cac:Party
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_16.png[alt="UML_representation", width="400", height="700"]
+[.text-center]
+image::Diagram_17.png[alt="UML_representation", width="400", height="700"]
+
+|===
+|===
+|*UBL Definition*|The party information about the Economic Operator in a tender.
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*|
+
+|*cac:PartyIdentification*
+|Complex
+|0..n
+|1..n
+|An identifier for this party. ESPD: multiple identifiers may be provided. Compulsory use of the attributes of the Identifier to specify the issuer and pattern of the Identifier (see example below).
+|*cac:PartyName*
+|Complex
+|0..n
+|1
+|A name for this party.
+|*cac:PostalAddress*
+|Complex
+|0..1
+|0..1
+|The party's postal address.
+
+|*cac:Contact*
+|Complex
+|0..1
+|0..1
+|The primary contact for this party.
+
+|*cac:AgentParty*
+|Complex
+|0..1
+|0..1
+|A party who acts as an agent for this party. ESPD: e.g. a representative natural person.
+
+|===
+
+Some MS, EC or private Qualification Systems may benefit of the rest of components of Party, namely:
+
+*	cac:PowerOfAttorney, several powers of attorney are associated with the party;
+*	cac:FinancialAccount, use this component if the Economic Operator is requested to provide a bank account;
+*	cac:PartyLegalEntity, allows to specify the information about the Economic Operator as registered in an official registry, e.g. a Business Register;
+*	cac:AdditionalWebSite and cac:SocialMediaProfile may specify additional online resources associated with this party (e.g. a satellite web site, a seller profile, etc.).
+
+The XML snippet below illustrates how to implement the minimum set of data used normally in the ESPD-EDM (e.g. by the ESPD Service):
+
+[source,xml]
+----
+<cac:EconomicOperatorParty>
+<cac:Party>
+<cbc:WebsiteURI>http://acme.org</cbc:WebsiteURI>
+<cac:PartyIdentification>
+<!-- VAT number -->
+<cbc:ID  schemeID="CIF" schemeAgencyID="AEAT">B20778012</cbc:ID>
+</cac:PartyIdentification>
+<cac:PartyName>
+<cbc:Name>Asociación de Corporaciones Mediáticas</cbc:Name>
+</cac:PartyName>
+<cac:PostalAddress>
+<cbc:StreetName>Abascal, 212</cbc:StreetName>
+<cbc:CityName>Madrid</cbc:CityName>
+<cbc:PostalZone>08201</cbc:PostalZone>
+<cac:Country>
+<cbc:IdentificationCode listID="CountryCodeIdentifier"  listName="ISO-1-ALPHA-2"  listAgencyID="ISO" listVersionID="1.0">ES</cbc:IdentificationCode>
+</cac:Country>
+</cac:PostalAddress>
+<cac:Contact>
+<cbc:Name>Vicent Rodríguez de la Peña</cbc:Name>
+<cbc:Telephone>+34917612323</cbc:Telephone>
+<cbc:ElectronicMail>info@acme.org</cbc:ElectronicMail>
+</cac:Contact>
+</cac:Party>
+</cac:EconomicOperatorParty>
+----
+

@@ -1,0 +1,98 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Reference to OJEU and other publications
+
+For contracts above the threshold the procurer SHALL publish the contract documents, namely the Contract Notice, on the Official Journal of the European Union (OJEU). The Qualification Application Request document MUST specify a minimum set of data ensuring the access to that information. 
+
+Additionally to the reference to the OJEU, the Contracting Authority MAY also refer to other official publications where the documents were published.
+
+The Figure below is a mock-up representation of how to collect the data expected to reference publications on official gazettes or journals footnote:[This mechanism can also be used for contracts below the threshold, obviously.].
+
+[.text-center]
+.Information about the publication of the Contract Notice
+image::Contract_Notice.png[alt="UML_representation", width="700", height="700"]
+
+The information required  is thus limited to these four data: the jurisdiction level of the journal, the name of the publication, the number assigned by the publication to the contract notice and the URL to access the contract notice (Notice that more than one publication can be added, button “Add publication”).
+
+The UBL-2.2 common aggregate component used to hold these data is AdditionalReferenceDocument.
+
+
+|===
+|*Element Name*|*cac:AdditionalReferenceDocument*
+|*ESPD Use*|The ESPD-EDM uses this component to refer to official gazettes or journals as well as to external documents. Although the component allows both the reference (via a URL) and the embedding of  the content (e.g. as Base64 code), the ESPD-EDM always never embeds the content but uses the attachment URL field to refer to those documents.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationRequest/cac:AdditionalReferenceDocument
+|===
+
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_1.png[alt="UML_representation", width="600", height="1000"]
+[.text-center]
+image::Diagram_2.png[alt="UML_representation", width="600", height="1000"]
+|===
+|===
+|*UBL Definition*|A reference to an additional document associated with this document.
+|===
+|===
+|*Element Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:ID*
+|Identifier
+|1
+|1
+|An identifier for the referenced document. The ESPD-EDM uses it to hold the Contract Notice number. See example below.
+|*cbc:DocumentTypeCode*
+|Code
+|0..1
+|1
+|The type of document being referenced, expressed as a code. For the ESDP-EDM it is compulsory use of the Code List “DocRefContentType”. See example below on how to specify the OJEU CN. If the type of document is not available in this list, provide the code “Other” and describe the content in the element “DocumentType”.
+|*cbc:DocumentType*
+|Code
+|0..1
+|0..1
+|The type of document being referenced, expressed as text.
+|*cac:Attachment/cac:ExternalReference +/cbc:FileName*
+|Text
+|0..1
+|0..1
+|The file name of the external object. The ESPD-EDMs uses this field to hold a self-descriptive title of the reference
+|*cac:Attachment/cac:ExternalReference +/cbc:DocumentDescription*
+|Text
+|0..1
+|0..1
+|Text describing the referenced document.
+|*cac:Attachment/cac:ExternalReference +/cbc:URI*
+|URI
+|0..1
+|0..1
+|The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.
+|===
+
+[.text-left]
+==== Example
+
+
+[source,xml]
+----
+<cac:AdditionalDocumentReference>
+	<cbc:ID schemeID="ISO/IEC 9834-8:2008 - 4UUID" schemeAgencyID="EU-COM-GROW" schemeAgencyName="DG GROW (European Commission)" schemeVersionID="1.1">2015/S 252-461137</cbc:ID> <!--1-->
+	<cbc:DocumentTypeCode listID="DocRefContentType" listAgencyID="EU-COM-GROW" listVersionID="1.0">TED_CN</cbc:DocumentTypeCode>
+	<cbc:DocumentType>Contract Notice published in TeD (Official Journal of the European Publications Office)</cbc:DocumentType> <!--2-->
+	<cac:Attachment>
+		<cac:ExternalReference>
+			<cbc:URI>http://ted.europa.eu/udl?uri=TED:NOTICE:127658-2017:TEXT:EN:HTML</cbc:URI>
+			<cbc:FileName>Belgium-Brussels: European Resource Efficiency Excellence Centre</cbc:FileName>
+			<cbc:Description>The objective of this contract is to set up a virtual European Resource Efficiency Excellence Centre. The Centre will provide information and support to European SMEs, business intermediaries, resource efficiencypractitioners and other interested parties such as regional authorities.</cbc:Description>
+		</cac:ExternalReference>
+	</cac:Attachment>
+</cac:AdditionalDocumentReference>
+----
+[cols="1a"]
+|===
+|*COMMENTS*|
+<1>  In the context of the ESPD-EDM all the Request documents XML instances MUST always include an Additional Document Reference indicating the OJEU reference number of the Contract Notice.
+<2>  This OJEU reference number MUST be specified in the field cbc:ID of the element cac:AdditionalDocumentReference component, and MUST follow the scheme defined by the European Publications Office: [][][][]/S [][][]-[][][][][][] (e.g. 2015/S 252-461137).
+|===

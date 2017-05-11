@@ -1,0 +1,48 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Updated criteria
+
+Some of the criteria defined in previous versions have been modified – generally extended –, namely to cater for the Self-contained mode. See the spread-sheet “CriteriaTaxonomy” to study the new data structure of these criteria.
+
+!===
+|*Criterion*|*ID*|*Modification*
+|If applicable, is the economic operator registered on an official list of approved economic operators or does it have an equivalent certificate (e.g. under a national (pre)qualification system)?
+|9b19e869-6c89-4cc4-bd6c-ac9ca8602165
+|The Criterion Properties have been simplified. The data about the Pre-Qualification System is to be provided now in the UBL-2.2 cac:EconomicOperatorParty/cac:QualifyinParty component. 
+
+|Is the economic operator participating in the procurement procedure together with others?
+|ee51100f-8e3e-40c9-8f8b-57d5a15be1f2
+|The Criterion Properties have been extended to meet the new SELF-CONTAINED ESPD requirements.
+
+|Does the economic operator rely on the capacities of other entities in order to meet the selection criteria set out under Part IV and the criteria and rules (if any) set out under Part V below?
+|9c70375e-1264-407e-8b50-b9736bc08901
+|The Criterion Properties have been extended to meet the new SELF-CONTAINED ESPD requirements
+
+|Does the economic operator intend to subcontract any share of the contract to third parties?
+|72c0c4b1-ca50-4667-9487-461f3eed4ed7
+|The Criterion Properties have been extended to meet the new SELF-CONTAINED ESPD requirements
+
+|Its average yearly turnover for the number of years required in the relevant notice, the procurement documents or the ESPD is as follows:
+|b16cb9fc-6cb7-4585-9302-9533b415cf48
+|The Criterion Properties have been extended to meet the new SELF-CONTAINED ESPD requirements.
+
+|Its specific yearly turnover in the business area covered by the contract for the number of financial years required in the relevant notice, the procurement documents or the ESPD is as follows:
+|074f6031-55f9-4e99-b9a4-c4363e8bc315
+|The Criterion Properties have been extended to meet the new SELF-CONTAINED ESPD requirements.
+
+|Its specific average yearly turnover in the business area covered by the contract for the number of years required in the relevant notice, the procurement documents or the ESPD is as follows:
+|d3dfb714-f558-4512-bbc5-e456fa2339de
+|The Criterion Properties have been extended to meet the new SELF-CONTAINED ESPD requirements.
+
+|Concerning the financial ratios specified in the relevant notice, the procurement documents or the ESPD, the economic operator declares that the actual values for the required ratios are as follows:
+|e4d37adc-08cd-4f4d-a8d8-32b62b0a1f46
+|The Criterion Properties have been extended to meet the new SELF-CONTAINED ESPD requirements.
+
+|References related to goods, services and works have been merged into one Criterion: 
+During the reference period, the economic operator has delivered the following principal deliveries, performed services or executed works of the type specified.
+Criteria 39 and 40 have been removed from the “Criteria Taxonomy” spread-sheet.
+|cdd3bb3e-34a5-43d5-b668-2aab86a73822
+|The Criterion has been dramatically modified to meet the new SELF-CONTAINED ESPD requirements.
+
+!===

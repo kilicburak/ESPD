@@ -1,0 +1,77 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== The Economic Operator role
+
+The ESPD-EDM defines different roles for the Economic Operator (EO). The mock-up below shows and describes these roles. The roles are also described in the Code List “EORoleType”.
+
+.Roles of the Economic Operator
+image::Mock_Up47.png[alt="UML_representation", width="900", height="600"]
+
+Depending on the EO role different information will be requested or not; thus:
+
+*	If the role is “Sole contractor” or the “Lead entity”, the EO MUST produce a complete ESPD Response;
+*	If the role is “Group member” (not the leader), the EO MUST produce a complete ESPD Response but doesn’t have to identify the rest of tenderers (procurers);
+*	If the role is “Other entity (relied upon)”, the entity MUST produce a complete ESPD Response but doesn’t have to identify the rest of tenderers (procurers);
+*	If the role is “Other entity (not relied upon), the role MUST produce an ESPD Response but doesn’t have to complete Part IV (Selection Criteria) nor Part V (Reduction of the number of qualified candidates).
+
+A software application managing the drafting of an ESPD Response document (e.g. the ESPD Service) may take into account the role of the EO to, dynamically, hide or show to the user those parts that need or not to be completed depending on the selected role.
+
+For the implementation of the EO role use the UBL-2.2 component cac:EconomicOperatorRole:
+
+|===
+|*Element Name*|*cac:EconomicOperatorRole*
+|*ESPD Use*|The ESPD-EDM uses this component to specify the role of the Economic Operator in the procurement procedure. 
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationResponse/cac:EconomicOperatorParty/cac:EconomicOperatorRole
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_15.png[alt="UML_representation", width="700", height="400"]
+
+|===
+|===
+|*UBL Definition*|The role of the party in a tender consortium.
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*|
+
+|*cbc:RoleCode*
+|Code
+|0..1
+|1
+|A code specifying the role of the party.
+|*cbc:RoleDescription*
+|Text
+|0..n
+|0..1
+|A textual description of the party role.
+
+|===
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<QualificationApplicationResponse 
+xmlns="urn:X-test:UBL:Pre-award:QualificationApplicationResponse" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:cac="urn:X-test:UBL:Pre-award:CommonAggregate" 
+xmlns:cbc="urn:X-test:UBL:Pre-award:CommonBasic" 
+xsi:schemaLocation="urn:X-test:UBL:Pre-award:QualificationApplicationResponse ../maindoc/UBL-QualificationApplicationResponse-2.2-Pre-award.xsd">
+
+...	
+
+<cac:ContractingParty> ... </cac:ContractingParty>
+
+<cac:EconomicOperatorParty>
+	<cac:EconomicOperatorRole>
+	<cbc:RoleCode listID="EORoleType" listAgencyName="EU-COM-GROW" listVersionID="2.0.0">SCLE</cbc:RoleCode>
+		<cbc:RoleDescription>Sole entity or, in case of Consortium, Joint Venture or other types of groups, the leader of the group.</cbc:RoleDescription>
+	</cac:EconomicOperatorRole>
+	<cac:Party> ... </cac:Party>
+</cac:EconomicOperatorParty>
+	
+	...
+</QualificationApplicationResponse>
+----

@@ -1,0 +1,31 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-center]
+== VI.Annex I: Mapping Version 1.0.2 and Version 2.0.0
+
+[.text-left]
+*	ProcurementProject: Differently to what was done in version 1.0.2 UBL-2.2 adds a ProcurementProject component at the root level of the document (absolute path /QualificationApplicationRequest/cac:ProcurementProject) to identify the procurement procedure;
+*	Lots: If the procurement procedure is not divided into lots the Request document should not contain instances of the component ProcurementProjectLot. In previous versions it was necessary to use always the component ProcurementProjectLot, even for procurement procedures that were not divided into lots. In the new version 2.0.0 of the ESPD-EDM this is no longer necessary. However it the document contains one, and only one ProcurementProjectLot component the ESPD Service will consider that the procurement procedure is not divided into lots;
+*	Criterion: the UBL-2.2 specification names this component “TenderingCriterion”;
+*	RequirementGroup: the UBL-2.2 specification names this component “TenderingCriteriaGroup”;
+*	RequirementGroup “PI” attribute: the “processing instruction” attribute is not defined in UBL-2.2. Instead, if needed, use the cbc:PropertyGroupTypeCode” component;
+*	Requirement: 
+**	The UBL-2.2 specification names this component “TenderingCriterionRequirement”;
+**	The attribute “responseDataType” does not exist in the UBL-2.2 specification. Instead the element cbc:ValueDataTypeCode is used. The Code List used by the ESPD-Service is the same as for the previous version of the ESDP-EDM: “ResponseDataType”. Beware thought that a new code “NONE” has been added at the end of the list as in the Self-contained ESPD some requirements might not expect any response (e.g. Requirements on lots);
+**	The attribute “PI” of RequirementGroup does not exist in UBL-2.2. Instead you may use the cbc:TypeCode element of the cac:TenderingCriterionPropertyGroup;
+*   JurisdictionLevel: the UBL-2.2 Legislation component uses a text (multiple cardinality). It also adds a class “”  that allows the codification of the geographical region corresponding to the jurisdiction.
+
+
+include::6.1_Code_Lists.adoc[]
+
+include::6.1.1_New_Code_Lists.adoc[]
+
+include::6.2_New_criteria.adoc[]
+
+include::6.3_Updated_criteria.adoc[]
+
+include::6.4_Main_differences_between_the_Regulated_and_the_Self-contained_documents.adoc[]
+
+
+
+

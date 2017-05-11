@@ -1,0 +1,10 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== ESPD-EDM constraints related to the Response document
+
+In the context of the ESPD-EDM the following requirements need to be satisfied:
+
+*	Copy as many component instances as possible from the QualificationApplicationRequest, e.g. the information about the Contracting authority, the Procurement project, etc.;
+*	All exclusion and selection criteria specified in the Request MUST also be instantiated in the Response document;
+*	A reference to the Request document MUST be included in the Response. Use the component AdditionalDocumentReference for this purpose.

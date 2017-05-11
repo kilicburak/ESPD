@@ -1,0 +1,99 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 3: Purely national Exclusion grounds
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|Purely national exclusion grounds:
+
+*  The MS will be able to define in e-Certis exclusion grounds that are purely national (classified in e-Certis as “Other exclusion grounds”). These criteria will be included all in the Reques document, that is, the CA is not able to select specific purely national exclusion grounds for a particular procedure.
+
+*  In the ESPDResponse, the EO will be required to answer YES/NO to each purely national exclusion ground. For the purely national exclusion grounds that have evidences related in e-Certis, the required evidences will be automatically captured and included in the Response document.
+!===
+
+The figure below shows a fragment of a long list of national criteria that in a software application (e.g. the ESPD Service) has captured from e-Certis. Per each Criterion the Economic Operator has to specify whether it fulfils the Criterion or not and eventually provide references to online evidences. This behaviour is very similar to the one described in the Example 1 about a Conviction with national sub-criteria. 
+
+[.text-center]
+.Purely national Exclusion grounds, mock-up
+image::Mock_Up14.png[alt="UML_representation", width="800", height="800"]
+
+This other figure shows the data structure for this Criterion, extracted from the “Criteria Taxonomy” spread-sheet. Notice that:
+
+*  This other figure shows the data structure for this Criterion, extracted from the “Criteria Taxonomy” spread-sheet. Notice that:
+
+*  The national criteria are sub-criteria (Cn/SCn) nested under the parent Criterion
+
+*  There may be many different national criteria
+
+[.text-center]
+image::Mock_Up15.png[alt="UML_representation", width="600", height="400"]
+
+[source,xml]
+----
+	<cac:TenderingCriterion>
+		<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0..0">63adb07d-db1b-4ef0-a14e-a99785cf8cf6</cbc:ID>
+		<cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CRITERION.EXCLUSION.NATIONAL.OTHER</cbc:CriterionTypeCode>
+		<cbc:Name>Purely National Exclusion Grounds</cbc:Name>
+		<cbc:Description>Other exclusion grounds that may be foreseen in the national legislation of the contracting authority’s or contracting entity’s Member State. Do the purely national grounds of exclusion, which are specified in the relevant notice or in the procurement documents, apply?</cbc:Description>
+		<cac:SubTenderingCriterion>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">2cb2f4cc-33ef-4959-8f0f-03e16f182a7b</cbc:ID>
+			<cbc:Name>I. Unauthorised use of foreign labour ( The Criminal Code of Finland 39/1889</cbc:Name>
+			<cbc:Description>Has the tenderer, or a representative thereof, been sentenced for unauthorised use of foreign labour in accordance with Chapter 47, Section 6a of the Criminal Code?</cbc:Description>
+			<cac:Legislation>
+				<cbc:Title>Criminal Code</cbc:Title>
+				<cbc:Article>Chapter 47, Section 6a</cbc:Article>
+				<cbc:URI>http://www.finlex.fi/en/laki/kaannokset/1889/en18890039.pdf</cbc:URI>
+			</cac:Legislation>
+			<cac:TenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">e14a3f2d-ba93-4f6c-938f-50a373f7636c</cbc:ID>
+					<cbc:Description>Your answer?</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">INDICATOR</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+			</cac:TenderingCriterionPropertyGroup>
+		</cac:SubTenderingCriterion>		
+		<cac:SubTenderingCriterion>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">3dc518ea-464a-4244-a8c9-0c2900e76401</cbc:ID>
+			<cbc:Name>II. Violation of the right to organise</cbc:Name>
+			<cbc:Description>Has the tenderer, or a representative thereof, been sentenced for violation of the right to organise in accordance with Chapter 47, Section 5 of the Criminal Code?</cbc:Description>
+			<cac:Legislation>
+				<cbc:Title>The Criminal Code of Finland 39/1889</cbc:Title>
+				<cbc:Article>Chapter 47, Section 5</cbc:Article>
+				<cbc:URI>http://www.finlex.fi/en/laki/kaannokset/1889/en18890039.pdf</cbc:URI>
+			</cac:Legislation>
+			<cac:TenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">e14a3f2d-ba93-4f6c-938f-50a373f7636c</cbc:ID>
+					<cbc:Description>Your answer?</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">INDICATOR</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+			</cac:TenderingCriterionPropertyGroup>
+		</cac:SubTenderingCriterion>
+		<cac:SubTenderingCriterion>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">e4b0cab3-ad2f-4d98-bee0-712dce2c0405</cbc:ID>
+			<cbc:Name>III. Extortionate work discrimination</cbc:Name>
+			<cbc:Description>Has the tenderer, or a representative thereof, been sentenced for extortionate work discrimination in accordance with Chapter 47, Section 3a of the Criminal Code?</cbc:Description>
+			<cac:Legislation>
+				<cbc:Title>The Criminal Code of Finland 39/1889</cbc:Title>
+				<cbc:Article>Chapter 47, Section 3a</cbc:Article>
+				<cbc:URI>http://www.finlex.fi/en/laki/kaannokset/1889/en18890039.pdf</cbc:URI>
+			</cac:Legislation>
+			<cac:TenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">e14a3f2d-ba93-4f6c-938f-50a373f7636c</cbc:ID>
+					<cbc:Description>Your answer?</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">INDICATOR</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+			</cac:TenderingCriterionPropertyGroup>
+		</cac:SubTenderingCriterion>
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">3e05e56d-fee2-43ba-b0c0-99df274505dd</cbc:ID>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">77ae3f29-7c5f-4afa-af97-24afec48c5bf</cbc:ID>
+					<cbc:Description>Information for [MS XXX] on e-Certis</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+			</cac:TenderingCriterionPropertyGroup>
+	</cac:TenderingCriterion>
+----

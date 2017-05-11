@@ -1,0 +1,6 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== EU and national criteria
+
+This new version of the ESPD-EDM 2.0.0 allows the specification of criteria defined by the MS in e-Certis. In the case of Exclusion criteria, each national Criterion is linked to a EU Criterion. The XML implementation of this situation is solved nesting the national Criterion inside the EU Criterion, i.e. as a sub-Criterion. XML examples are provided in sections “4.5.2 Example 1: A Conviction Exclusion Criterion with national sub-criteria” and “4.5.4 Example 3: Purely national Exclusion grounds”.

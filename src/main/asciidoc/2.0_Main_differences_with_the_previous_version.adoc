@@ -1,0 +1,15 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-center]
+== II. Main Differences with the previous version
+
+
+[.text-left]
+include::2.1_Regulated_and_Self-contained_eESPD.adoc[]
+
+include::2.2_EU_and_national_criteria.adoc[]
+
+include::2.3_XSD_Schemas_use_of_OASIS_UBL-2.2.adoc[]	
+
+include::2.4_Technical_notes.adoc[]
+

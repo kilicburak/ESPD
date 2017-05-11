@@ -1,0 +1,105 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 5: References and confidentiality 
+==== Situation
+
+During the provision of references for works, the Economic Operator wishes to claim that both one reference and the Evidence related to that reference are confidential. 
+The Contracting Authority SHALL NOT make this reference and evidence public.
+
+
+[.text-center]
+image::Mock_Up68.png[alt="UML_representation", width="800", height="1100"]
+
+==== Data Structure
+
+==== XML instance copied from the Request document
+
+See XML code in section “5.6.5 Example 5: References on similar works, deliveries or services”. 
+
+==== Answer provided by the EO
+
+[source,xml]
+----
+<!-- EO Responses -->
+	<!-- Lots to which the Reference applies to-->	
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">f6e919fc-bfe3-4120-8ad7-d9d159998a88</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ResponseValue><cbc:ResponseID>LOT5</cbc:ResponseID></cac:ResponseValue>
+		<cac:ResponseValue><cbc:ResponseID>LOT6</cbc:ResponseID></cac:ResponseValue>
+		<cac:ResponseValue><cbc:ResponseID>LOT7</cbc:ResponseID></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- Reference description-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c7bd85b8-6e65-416c-90b8-f64d551bea24</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ResponseValue><cbc:Description>DoD consultancy on IT convergence</cbc:Description></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- Total amount-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">18606b15-6a4a-4b7a-82e5-aff5c4d065ab</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ResponseValue><cbc:ResponseAmount currencyID="EUR">15000</cbc:ResponseAmount></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- Activity of the economic operator -->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">695810f8-f788-4bda-97d6-53d3e2dd5796</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ResponseValue><cbc:Description>Military satellite software development</cbc:Description></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- Specific amount -->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">ee486082-93fa-4c17-8920-fdf01b890bd1</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ResponseValue><cbc:ResponseAmount currencyID="EUR">75912.12</cbc:ResponseAmount></cac:ResponseValue>
+	</cac:TenderingCriterionResponse>
+	<!-- Period-->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">cc1da737-6c4e-4f4e-821d-c260029058f6</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ApplicablePeriod><cbc:StartDate>2014-03-02</cbc:StartDate><cbc:EndDate>2015-01-04</cbc:EndDate></cac:ApplicablePeriod>
+	</cac:TenderingCriterionResponse>
+	<!-- Recipients of the Reference start here. More than one recipient per Reference is possible -->
+	<!-- Recipient name -->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0"></cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ApplicablePeriod><cbc:Description>USA Department of Defence</cbc:Description></cac:ApplicablePeriod>
+	</cac:TenderingCriterionResponse>
+	<!-- Recipient Contact Person -->
+		<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">db7112d6-c689-4d25-b14f-889d89e4dc69</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ApplicablePeriod><cbc:Description>General Patton Junior</cbc:Description></cac:ApplicablePeriod>
+	</cac:TenderingCriterionResponse>
+		<!-- Recipient e-mail -->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">927897e8-b6c7-4c7e-ae0d-f4c21ac81634</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:ApplicablePeriod><cbc:Description>patton.junior@dod.gov.usa</cbc:Description></cac:ApplicablePeriod>
+	</cac:TenderingCriterionResponse>
+	<!-- Evidence URL -->
+	<cac:TenderingCriterionResponse>
+		<cbc:ValidatedCriterionRequirementID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">f4313bb6-21b6-499e-bdff-debe10e11d2c</cbc:ValidatedCriterionRequirementID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:EvidenceSupplied><cbc:ID>2c295020-1263-4a88-a3f4-c2590b45936e</cbc:ID></cac:EvidenceSupplied>
+	</cac:TenderingCriterionResponse>	
+	<!-- Evidences -->
+	<cac:Evidence>
+		<cbc:ID>2c295020-1263-4a88-a3f4-c2590b45936e</cbc:ID>
+		<cbc:ConfidentialityLevelCode listID="ConfidentialityLevel" listAgencyID="EU-COM-GROS" listVersionID="2.0.0">CONFIDENTIAL</cbc:ConfidentialityLevelCode>
+		<cac:DocumentReference>
+			<cbc:ID>SAT-11121233</cbc:ID>
+			<cac:Attachment><cac:ExternalReference><cbc:URI>http:dod.gov.usa/sat/it/soft/prk?id=11121233</cbc:URI></cac:ExternalReference></cac:Attachment>
+		</cac:DocumentReference>
+	</cac:Evidence>
+----
+
+[cols="1a"]
+!===
+|*COMMENTS*|
+<1>	Beware that this exemple corresponds to the situation where the Procurement Project is divided into lots. Notice how the EO specifies the lots for which the Reference applies to;
+<2>	In this exemple only reference is provided, following the CA requirement. Many references could have been been referrenced too;
+<3>	This reference referrences one recipient, but could have referrenced many;
+!===

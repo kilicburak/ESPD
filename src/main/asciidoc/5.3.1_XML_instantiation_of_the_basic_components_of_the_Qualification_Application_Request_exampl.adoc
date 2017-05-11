@@ -1,0 +1,43 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== XML instantiation of the basic components of the Qualification Application Request, example
+
+[source,xml]
+----
+
+<?xml version="1.0" encoding="UTF-8"?>
+<QualificationApplicationResponse 
+xmlns="urn:X-test:UBL:Pre-award:QualificationApplicationResponse" <!--2-->
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:cac="urn:X-test:UBL:Pre-award:CommonAggregate" <!--2-->
+xmlns:cbc="urn:X-test:UBL:Pre-award:CommonBasic" <!--2-->
+xsi:schemaLocation="urn:X-test:UBL:Pre-award:QualificationApplicationResponse file:///C:/Users/estaromi/OneDrive%20-%20everis/Projects/GROW/QIS/ESPD-EDM/ESPD-EDM-V2.0.0/dist/xsdrt/maindoc/UBL-QualificationApplicationResponse-2.2-Pre-award.xsd"> <!--1-->
+
+<cbc:UBLVersionID schemeAgencyID="OASIS-UBL-TC">2.2</cbc:UBLVersionID>
+<cbc:CustomizationID schemeAgencyID="EU-COM-GROW">2.0.0</cbc:CustomizationID>
+<cbc:ID schemeAgencyID="DGPE" schemeVersionID="1.1"> PP.20170419.1024.EO</cbc:ID>
+<cbc:UUID schemeID="ISO/IEC 9834-8:2008 - 4UUID" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">f01c214f-2fe6-4664-83ff-353f118b8d6f</cbc:UUID>
+<cbc:ContractFolderID schemeAgencyID="DGPE">PP.20170419.1024-9</cbc:ContractFolderID>
+<cbc:IssueDate>2017-05-21</cbc:IssueDate>
+<cbc:IssueTime>12:09:11</cbc:IssueTime>
+<cbc:EconomicOperatorGroupName>BEOVEO</cbc:EconomicOperatorGroupName>
+<cbc:QualificationApplicationTypeCode listID="QualificationApplicationType" listAgencyName="EU-COM-GROW" listVersionID="2.0.0">REGULATED</cbc:QualificationApplicationTypeCode>
+	
+	
+
+<cac:ContractingParty> .. </cac:ContractingParty>
+<cac:EconomicOperatorParty> .. </cac:EconomicOperatorParty>
+	...
+	
+</QualificationApplicationResponse> 
+----
+
+[cols="1a"]
+!===
+|*COMMENTS*|
+<1>	The Common Basis Components (CBC) are defined in the file dist/xsdrt/common/UBL-CommonBasicComponents-Pre-award.xsd;
+<2>	UBL-2.2 is under public review, hence the temporary urn:X-test namespaces. Final version is foreseen by the end of 2017.
+!===
+
+

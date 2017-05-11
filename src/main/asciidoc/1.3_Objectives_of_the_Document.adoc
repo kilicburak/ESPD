@@ -1,0 +1,19 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Objectives of the Document
+
+The objective of this document is to introduce the new ESPD Exchange Data Model (ESP-EDM-2.0.0), namely the schemas, data structures, rules and examples necessary for the implementation of two eESPD documents: the Request and the Response documents.
+
+The Request document is used by the Contracting Authorities (CA) to express the Exclusion and Selection criteria, as well as particular requirements, that the Economic Operators will need to fulfil in the context of a tender. 
+
+The Response document is used by the Economic Operators (EO) to answer the questions and provide references to evidences in response to the criteria and requirements expressed by the CA in the Request document.
+
+This document is part of a “distribution” package (abbreviated as “dist”) containing:
+
+. The W3C XSD Schemas based on which the XML eESPD documents are implemented;
+. The XML fragments of code used in the examples;
+. The Code Lists used for the implementation of this version of the eESPD documents;
+. The conceptual model and logic design
+. Resources for the validation of the XML instances of the eESPD;
+. Other resources.

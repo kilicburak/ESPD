@@ -1,0 +1,12 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== ESPD-EDM constraints related to the criteria
+
+*   The ESPD-EDM requires that the Request document MUST specify ALL the Exclusion criteria and one or more (generally more than one, obviously) Selection criteria;
+
+*	One important aspect of the ESPD-EDM is that all the criteria defined in the Request document MUST also be part of the Response document, both for the Regulated and (especially) the Self-contained modes of the ESPD documents.
+
+*	There are data that that is generic, i.e. not specific of the procurement procedure. The IDs and descriptions are “constant”, .e.g. cannot be modified by the Contracting Authority. These constant data are defined in e-Certis (the values for the Criterion IDs and descriptions can be consulted  in the list “CriteriaTaxonomy” (file /dist/cl/xls/CriteriaTaxonomy-V2.0.0.xlsx). 
+
+*	In the ESPD-EDM each Criterion contains always specific properties that MUST be grouped using the UBL-2.2 component TenderingCriterionPropertyGroup. A group of properties MAY contain (and usually contains) sub-groups of properties. The taxonomy of criteria (mentioned in the previous point) is also used in this document to illustrate the predefined data structure for each ESPD Criterion. 

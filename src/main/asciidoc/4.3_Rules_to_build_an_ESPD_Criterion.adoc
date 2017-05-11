@@ -1,0 +1,41 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Rules to build an ESPD Criterion
+
+In the ESPD-EDM each Criterion is expected in a predefined structure. The implementation of an ESP-EDM the data structure of a Criterion follows always a regular pattern. It is important for the developers to understand and follow the rules applied to build this pattern and implement the corresponding XML code. The figure below shows a fragment of one Criterion (extracted from the Criteria Taxonomy spread-sheet):
+
+[.text-center]
+.The pattern of an ESPD-EDM Criterion
+image::EDM_1.png[alt="UML_representation", width="700", height="500"]
+
+[cols="1a"]
+!===
+|Legend:|
+* Cn represent the Criterion;
+* Gn represent a group of properties;
+*	Gn.n, Gn.n.n, Gn.n.n.n represents sub-groups of Properties. The maximum nesting of sub-groups in ESPD is 4;
+* Pn represents one Property.
+!===
+
+The regular rules to build this pattern are:
+
+*  One Criterion expresses a general condition or question. The description of the Criterion may be as long as needed and MUST describe unambiguously what needs to be evaluated. It might also refer to supporting documentation or additional information. Example:
+ “Has the Economic Operator itself or any person who is a member of its administrative, management or supervisory body or has powers of representation, decision or control therein been the subject of a conviction by final judgment for participation in a criminal organisation, by a conviction rendered at the most five years ago or in which an exclusion period set out directly in the conviction continues to be applicable? As defined in Article 2 of Council Framework Decision 2008/841/JHA of 24 October 2008 on the fight against organised crime (OJ L 300, 11.11.2008, p. 42).","EXCLUSION.CRIMINAL_CONVICTIONS","57(1)”;
+ 
+ *  In general the Criterion description contains a question that is answered with a “yes” or “not” answer. For the      exclusion criteria, the ESPD approach is to draft the question from a “negative perspective”: 
+ “Has the Economic Operator … been the subject of a conviction …?”
+ If the Economic Operator answers ''no'' then it has nothing to justify or motivate. On the contrary if it answers ''yes'' it will have to provide additional data and evidences to prove that the Criterion is satisfied.
+ This rule is systematically applied to all the exclusion criteria of the ESPD.
+ 
+ *	If additional data has to be provided by the Economic Operator then the particular questions (or “Criterion Properties”) need to be organised as follows:
+ 
+ **  A Criterion Property MUST always be included in a group; e.g.: “your answer?” in the example above belongs to the group G1 (in other words, Criterion Properties can never been implemented as an isolated element attached directly to the Criterion. See XML examples in this document to check this principle);
+ 
+ **  If the property implies several data, the set of data MUST be grouped; e.g. “date of conviction, reason, who has been convicted, length of the period of exclusion”;
+ 
+ **	 If the answer to the property implies one or multiple forking scenarios, the data required in each scenario must be grouped in sub-groups of properties; e.g. “have you taken measures to demonstrate your reliability (Self-cleaning)”.
+
+ 
+This document provides multiple examples of XML fragments containing criteria where you can study and verify these rules.
+ 

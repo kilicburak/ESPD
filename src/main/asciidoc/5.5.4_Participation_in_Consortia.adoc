@@ -1,0 +1,40 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Participation in Consortia
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|
+
+When Economic Operators tender as part of a group, e.g. a Consortium, Joint Venture or other types of groups, the leader of the group MUST provide information about the other Economic Operators that will participate in the group.
+!===
+
+The mock-up below shows a possible way of collecting the information requested in the Self-contained ESPD-EDM. 
+
+A software application managing the Response document (e.g. the ESPD Service) should take into account that this information is only shown in the case the role of the Economic Operator is a Sole Contractor or a Lead Entity.
+
+Therefore the rest of participant do not have to provide this information on their Response documents.
+
+[.text-center]
+.The leader of a Consortium provides information about the participants
+image::Mock_Up52.png[alt="UML_representation", width="1100", height="900"]
+
+The Criterion data structure is represented in the figure below, extracted from the Criteria Taxonomy spread-sheet. Beware that: 
+
+.	The sub-group requesting the data about the economic operator may be repeated several times, as many as economic operators participate in the consortium;
+.	Inside the previous sub-group, the sub-sub-group requesting the ID and ID type of the economic operator may be repeated several times.
+
+[.text-center]
+image::Diagram_19.png[alt="UML_representation", width="900", height="400"]
+
+
+
+[cols="1a"]
+!===
+|XML Example TODO|
+|*COMMENTS*|
+<1>	Very important: the Lead entity MUST specify a name for the group. The Lead entity SHOULD ensure that all the Economic Operators and entities related to that group use EXACTLY the same name in their Response documents, whithout any misspelling errors;
+<2>	Compulsory use of the CodeList “EOIDType” to categorise the type of the Economic Operator ID.
+!===
+

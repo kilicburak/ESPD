@@ -1,0 +1,6 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Context
+Article 59 of the new Public Procurement Directive 2014/24/EC (henceforth ''the Directive'') introduced a new concept, the European Single Procurement Document (ESPD) which is a self-declaration document intended for preliminary evidence in a public procurement procedure. By mapping out equivalent certificates between MS, the ESPD replaces certificates issued by public authorities or a third party involved in a procedure. It is thus a valuable facilitator for cross-border participation of a greater number of potential operators in public procurement procedures and a valuable tool for integrating the European Single Market.
+

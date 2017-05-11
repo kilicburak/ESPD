@@ -1,0 +1,142 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Groups of Properties and Properties of a Criterion
+
+What really defines the Criterion are its “properties”, i.e. all the specific elements that the Contracting Authority defines inside a Criterion that will help determine whether the Criterion is fulfilled or not. The Criterion can thus be seen as a generic question that the Contracting Authority asks, and the properties are a set of concrete requests (optional or mandatory) and data (in the response) that, altogether, will be assessed to, namely, decide the exclusion or selection of the Economic Operator.
+
+In the ESP these properties are always defined in groups of properties. A group of properties MAY contain (and usually contains) subgroups of properties that will need to be answered by the Economic Operator possibly depending on the answer given to the parent group (see subsections below for examples).
+
+This way the ESPD-EDM predefines specific structures of data per each Exclusion and Selection Criterion. 
+
+The table below shows all the elements of the UBL-2.2 component and lists the ones used in the ESPD-EDM.
+
+|===
+|*Element Name*|*cac:TenderingCriterionPropertyGroup*
+|*ESPD Use*|A group of specific requests (optional or mandatory) that defines a specific data structure for a given Criterion. In the ESPD-EDM these data structures are predefined. See file /dist/cl/xls/CriteriaTaxonomy-V2.0.0.xlsx.
+|*File*|ddist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationRequest/cac:TenderingCriterion/cac:TenderingCriterionPropertyGroup
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_8.png[alt="UML_representation", width="800", height="500"]
+|===
+|===
+|*UBL Definition*|
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:ID*
+|Identifier
+|0..1
+|1
+|An identifier to refer to the Criterion property group.
+|*cbc:CriteriaGroupTypeCode*
+|Code
+|0..1
+|1
+|A code signifying the type of group. ESPD: Compulsory use of the Code List “CriteriaType”.
+|*cac:TenderingCriterionProperty*
+|Complex
+|0..n
+|0..n
+|All the criteria properties comprising the tendering Criterion.
+|*cac:SubsidiaryTenderingCriterionPropertyGroup*
+|Complex
+|0..n
+|0..n
+|Subsidiary tendering criteria groups comprising this tendering Criterion. ESPD: Subcriteria.
+|===
+
+The next table describes the elements of one Property. Beware that it defines different types of possible data the Contracting Authority may request (and for which it expects an answer from the Economic Operator, e.g. ExpectedID, ExpectedValueNumeric, etc.). See examples of XML snippets below to further understand how this is implemented for the ESPD.
+
+|===
+|*Element Name*|*cac:TenderingCriterionProperty*
+|*ESPD Use*|Concrete request for (or expression of) one datum specified by the Contracting Authority. +
+The request for data is answered by the Economic Operator in the Qualification Application Response document.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|*Absolute Path*|/QualificationApplicationRequest/cac:TenderingCriterion +/cac:TenderingCriterionPropertyGroup/cac:TenderingCriterionProperty
+|===
+[cols="a"]
+|===
+|*Diagram*|
+[.text-center]
+image::Diagram_9.png[alt="UML_representation", width="600", height="1000"]
+|===
+|===
+|*UBL Definition*|All the criteria properties comprising the tendering Criterion.
+|*File*|dist/common/xsdrt/UBL-CommonAggregateComponents-Pre-award.xsd
+|===
+|===
+|*Child Name*|*Type*|*UBL Cardinality*|*ESPD Cardinality*|*Description*
+
+|*cbc:ID*
+|Identifier
+|0..1
+|1
+|An identifier to refer to the Criterion property.
+|*cbc:Name*
+|Text
+|0..1
+|0..1
+|The name of the Criterion requirement
+|*cbc:Description*
+|Text
+|0..n
+|1
+|A description of the Criterion requirement.
+|*cbc:ValueDataTypeCode*
+|Code
+|0..1
+|1
+|The data type of the numeric value and any constraints on the data type metadata. ESPD: The expected type of the data. Compulsory use of the Code List “ResponseDataType”.
+|*cbc:ValueUnitCode*
+|Code
+|0..1
+|0..1
+|The unit of measure of the numeric value as a quantity or measure.
+|*cbc:ValueCurrencyCode*
+|Code
+|0..1
+|0..1
+|The currency of the numeric value as an amount.
+|*cbc:ExpectedID*
+|Identifier
+|0..1
+|0..1
+|The expected identifier that the responder has to provide in the Criterion response.
+|*cbc:ExpectedCode*
+|Code
+|0..1
+|0..1
+|The expected code that the responder has to provide in the Criterion response.
+|*cbc:ExpectedValueNumeric*
+|Numeric
+|0..1
+|0..1
+|The expected value that the responder has to provide in the Criterion response.
+|*cbc:MaximumValueNumeric*
+|Numeric
+|0..1
+|0.1
+|The maximum value the response must have.
+|*cbc:MinimumValueNumeric*
+|Numeric
+|0..1
+|0..1
+|The minimum value the response must have.
+|*cbc:CertificationLevelDescription*
+|Text
+|0..1
+|0..1
+|The description of the level of the expected certification.
+|*cac:ApplicablePeriod*
+|
+|0..1
+|0..1
+|The period to which this Criterion requirement shall apply.
+|===

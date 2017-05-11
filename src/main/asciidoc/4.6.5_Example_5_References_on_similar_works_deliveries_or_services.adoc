@@ -1,0 +1,210 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 5: References on similar works, deliveries or services 
+
+[cols="1a"]
+!===
+|*SELF-CONTAINED ESPD FEATURE*|References on similar works, deliveries or services:
+
+*	The Contracting Authority (CA) has to be able to enter the minimum number of references required and to provide as many requirements as needed related to those references.
+*	The specific requirements required by the CA have to be shown to the Economic Operator (EO). The EO needs to be able to add the references that comply with the requirements. For each reference, the EO will be able to provide one or several recipients and to indicate whether the information is available electronically or not;
+*	The EO needs to be able to specify for which lots the reference is valid (relates to).
+!===
+
+[.text-left]
+==== CA view
+
+The mock-up below represents the requirements the CA should be able to specify regarding the References:
+
+*	The Lots to which the requirements DO NOT apply;
+*	The minimum number of references necessary for the evaluation;
+*	Specific requirements, as a free-text.
+
+The mock-up presents the situation when the Procurement Procedure is divided into lots. Otherwise the software application managing the drafting of the Request document (e.g. the ESPD Service) would not show the boxes allowing for the selection of lots.
+
+[.text-center]
+.References, CA-view mock-up
+image::Mock_Up40.png[alt="UML_representation", width="900", height="900"]
+
+[.text-left]
+==== EO view (NO LOTS)
+
+The requirements specified by the Contracting Authority are to be shown to the Economic Operator. This mock-up below provides a possible representation for the EO point-of-view in the case the Procurement Project is not divided into Lots:
+
+[.text-center]
+.References WITH LOTS, EO-view mock-up
+image::Mock_Up41.png[alt="UML_representation", width="900", height="1100"]
+
+[.text-left]
+==== Data Structure
+
+The data structure for both the requirements and the expected responses follow, extracted from the “Criteria Taxonomy” spread-sheet. This structure contains the lots specified by the EO. In case the Procurement Procedure is not divided into lots the Criterion Property expecting the list of lots is not used (see the two XML examples below, one with lots and the other without lots):
+
+[.text-center]
+image::Mock_Up42.png[alt="UML_representation", width="1000", height="900"]
+
+[.text-left]
+==== XML example
+
+See also section “6.6.5 Example 5: References and confidentiality” for an example on how the EO responds this Request.
+
+[source,xml]
+----
+	<cac:TenderingCriterion>
+		<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0..0">cdd3bb3e-34a5-43d5-b668-2aab86a73822</cbc:ID>
+		<cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.REFERENCES</cbc:CriterionTypeCode>
+		<cbc:Name>References</cbc:Name>
+		<cbc:Description>During the reference period, the economic operator has delivered the following principal deliveries, performed services or executed works of the type specified.</cbc:Description>
+		<!-- EU Criterion Legislation-->
+		<cac:Legislation></cac:Legislation>
+		<!-- Requirement by the CA-->
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">3e05e56d-fee2-43ba-b0c0-99df274505dd</cbc:ID>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">73943e4d-96c3-4884-9c72-0596d100c814</cbc:ID>
+					<cbc:Description>Minimum number of references</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">50a04664-ef71-4b2b-a071-aa81309210fd</cbc:ID>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">977f93ba-97ed-4e71-8bce-5844751e3661</cbc:ID>
+						<cbc:Description>The following requirements apply to lots</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+					</cac:TenderingCriterionProperty>
+					<cac:SubsidiaryTenderingCriterionPropertyGroup>
+						<cac:TenderingCriterionProperty>
+							<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">570ba446-c564-433b-b922-e19e5eaf9b6d</cbc:ID>
+							<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+							<cbc:ExpectedID>LOT1</cbc:ExpectedID>
+						</cac:TenderingCriterionProperty>
+						<cac:TenderingCriterionProperty>
+							<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c997e301-7555-4972-8665-107b2ddd49b5</cbc:ID>
+							<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+							<cbc:ExpectedID>LOT2</cbc:ExpectedID>
+						</cac:TenderingCriterionProperty>
+						<cac:TenderingCriterionProperty>
+							<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c997e301-7555-4972-8665-107b2ddd49b5</cbc:ID>
+							<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+							<cbc:ExpectedID>LOT4</cbc:ExpectedID>
+						</cac:TenderingCriterionProperty>
+						<cac:TenderingCriterionProperty>
+							<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c997e301-7555-4972-8665-107b2ddd49b5</cbc:ID>
+							<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+							<cbc:ExpectedID>LOT5</cbc:ExpectedID>
+						</cac:TenderingCriterionProperty>
+					</cac:SubsidiaryTenderingCriterionPropertyGroup>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>	
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">3e05e56d-fee2-43ba-b0c0-99df274505dd</cbc:ID>
+					<cbc:Description>Requirement</cbc:Description>
+					<cbc:CertificationLevelDescription>Credentials will be required if the tenderer is selected.</cbc:CertificationLevelDescription>
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>
+		<!-- Data to be provided by the EO -->
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">41e69a73-da40-42bb-a35c-748218d26e92</cbc:ID>		
+			<cac:TenderingCriterionProperty>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">445954a0-5c70-4060-be8f-88ea2dd429b3</cbc:ID>
+				<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">NONE</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>	
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">09cf676d-377d-4edb-b927-d9adb53280e2</cbc:ID>
+					<cbc:Description>Lots these references apply to</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">IDENTIFIER</cbc:ValueDataTypeCode>
+				</cac:TenderingCriterionProperty>
+				<cac:SubsidiaryTenderingCriterionPropertyGroup>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">dcb40ae1-3f07-48a8-9cf9-a4be8954008f</cbc:ID>
+					<cbc:Description>One reference</cbc:Description>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c7bd85b8-6e65-416c-90b8-f64d551bea24</cbc:ID>
+						<cbc:Description>Reference description</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DESCRIPTION</cbc:ValueDataTypeCode>
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">18606b15-6a4a-4b7a-82e5-aff5c4d065ab</cbc:ID>
+						<cbc:Description>Total amount</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">28235177-2eaf-4f64-b98d-8a77274fec38</cbc:ID>
+						<cbc:Description>Date</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DATE</cbc:ValueDataTypeCode>
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">695810f8-f788-4bda-97d6-53d3e2dd5796</cbc:ID>
+						<cbc:Description>Activity of the economic operator</cbc:Description>
+						<cbc:ValueDataTypeCode>DESCRIPTION</cbc:ValueDataTypeCode>
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">ee486082-93fa-4c17-8920-fdf01b890bd1</cbc:ID>
+						<cbc:Description>Specific amount</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">AMOUNT</cbc:ValueDataTypeCode>
+					</cac:TenderingCriterionProperty>
+					<cac:TenderingCriterionProperty>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">cc1da737-6c4e-4f4e-821d-c260029058f6</cbc:ID>
+						<cbc:Description>Period</cbc:Description>
+						<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">PERIOD</cbc:ValueDataTypeCode>
+					</cac:TenderingCriterionProperty>
+					<cac:SubsidiaryTenderingCriterionPropertyGroup>
+						<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">42c4b5cf-d584-4f0d-8ae8-bfdc1b7c9074</cbc:ID>
+						<cac:TenderingCriterionProperty>
+							<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">1308aee8-6183-43bc-8ddc-68b2fc2c6bf5</cbc:ID>
+							<cbc:Description>Recipient</cbc:Description>
+							<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DESCRIPTION</cbc:ValueDataTypeCode>							
+						</cac:TenderingCriterionProperty>
+						<cac:TenderingCriterionProperty>
+							<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0"></cbc:ID>
+							<cbc:Description>Contact person name</cbc:Description>
+							<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DESCRIPTION</cbc:ValueDataTypeCode>							
+						</cac:TenderingCriterionProperty>
+							<cac:TenderingCriterionProperty>
+							<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">927897e8-b6c7-4c7e-ae0d-f4c21ac81634</cbc:ID>
+							<cbc:Description>Contact email</cbc:Description>
+							<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DESCRIPTION</cbc:ValueDataTypeCode>							
+						</cac:TenderingCriterionProperty>
+					</cac:SubsidiaryTenderingCriterionPropertyGroup>
+				</cac:SubsidiaryTenderingCriterionPropertyGroup>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>
+		
+		<!-- Is this information available electronically? -->
+		<cac:TenderingCriterionPropertyGroup>
+			<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">7458d42a-e581-4640-9283-34ceb3ad4345</cbc:ID>
+			<cac:TenderingCriterionProperty>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">c1347b74-1872-4060-a6db-f4044edcd7c4</cbc:ID>
+				<cbc:Description>Is this information available electronically?</cbc:Description>
+				<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">INDICATOR</cbc:ValueDataTypeCode>
+			</cac:TenderingCriterionProperty>
+			<cac:SubsidiaryTenderingCriterionPropertyGroup>
+				<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">41dd2e9b-1bfd-44c7-93ee-56bd74a4334b</cbc:ID>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">f4313bb6-21b6-499e-bdff-debe10e11d2c</cbc:ID>
+					<cbc:Description>URL</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">EVIDENCE_URL</cbc:ValueDataTypeCode>	
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">1f1cd18e-3e01-4ca2-af4c-e2981924ba8d</cbc:ID>
+					<cbc:Description>Verification Code</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CODE</cbc:ValueDataTypeCode>	
+				</cac:TenderingCriterionProperty>
+				<cac:TenderingCriterionProperty>
+					<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">b01fe7d4-4486-4005-8a81-938409cfe082</cbc:ID>
+					<cbc:Description>Issuer</cbc:Description>
+					<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">DESCRIPTION</cbc:ValueDataTypeCode>	
+				</cac:TenderingCriterionProperty>
+			</cac:SubsidiaryTenderingCriterionPropertyGroup>
+		</cac:TenderingCriterionPropertyGroup>				
+	</cac:TenderingCriterion>			
+----
+
+[cols="1a"]
+!===
+|*COMMENTS*|
+<1>   Beware that this example corresponds to the situation where the Procurement Project is divided into lots;
+<2>	Notice how (1) the CA specifies the Lots for which the requirements apply to n lots; (2) To see how the EO specifies to which lots one reference applies to see section “6.6.5 Example 5: References and confidentiality ”.
+!===

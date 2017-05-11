@@ -1,0 +1,11 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Main differences between the Regulated and the Self-contained documents
+
+*	A self-contained ESPD document does make references the Contract Notice or other procurement documents but to data, evidences and documents that are specified in the ESPD document. 
+**	The specification of national exclusion criteria is a feature of the self-contained ESPD. Regulated ESPD documents do only contain EU exclusion criteria.
+*	The Regulated ESPD does not need to specify the following information for Part I of the ESPD Service (Information concerning the procurement procedure and the contracting authority or contracting entity):
+**	Tenders may be submitted for
+**	Maximum number of lots
+**	Maximum number of lots

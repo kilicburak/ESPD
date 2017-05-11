@@ -1,0 +1,62 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Example 1: EO specifies the lots to which it tenders
+
+==== Situation
+
+*	The Contracting Operator has divided the Procurement Procedure into 7 lots;
+*	The Economic Operator states that it will tender for lots 5, 6 and 7.
+
+
+image::Mock_Up55.png[alt="UML_representation", width="1100", height="700"]
+
+==== Data Structure
+
+[.text-center]
+image::Mock_Up56.png[alt="UML_representation", width="1100", height="700"]
+
+==== XML instance copied from the Request document
+
+[source,xml]
+----
+<cac:TenderingCriterion>
+	<cbc:ID schemeID="CriteriaTaxonomy" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">1e430aa8-2875-4269-a751-8124549019c6</cbc:ID>
+	<cbc:CriterionTypeCode listID="CriteriaTypeCode" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">CRITERION.OTHER.LOTS_REQUIREMENTS</cbc:CriterionTypeCode>
+	<cbc:Name>Requirements on lots</cbc:Name>
+	<cbc:Description>Criteria established by the Contracting Authority regarding the lots into which this procurement procedure is divided.</cbc:Description>
+
+	<!-- Requirements set by the CA follow -->
+	<cac:TenderingCriterionPropertyGroup> .. </cac:TenderingCriterionPropertyGroup>
+
+	<!-- Data expected from the EO: list of lots -->
+	<cac:TenderingCriterionPropertyGroup>
+		<cbc:ID schemeID="CriteriaID" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">7ad7f4b0-98eb-4d7e-8fd5-e1350de20cc2</cbc:ID>
+		<cac:TenderingCriterionProperty>
+		<cbc:ID schemeID="CriteriaID" schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">13441726-e488-40ff-8202-758a325c1a38</cbc:ID>
+		<cbc:Description>Please provide the lots to which you are tendering</cbc:Description>
+		<cbc:ValueDataTypeCode listID="ResponseDataType" listAgencyID="EU-COM-GROW" listVersionID="2.0.0">IDENTIFIER</cbc:ValueDataTypeCode>
+		</cac:TenderingCriterionProperty>
+	</cac:TenderingCriterionPropertyGroup>
+</cac:TenderingCriterion>
+----
+
+==== Answers provided by the EO
+
+[source,xml]
+----
+<cac:TenderingCriterionResponse>
+	<cbc:ID schemeAgencyID="EU-COM-GROW" schemeVersionID="2.0.0">6280178c-a3a3-46e7-9b57-67c3aa81d25f</cbc:ID>
+	<cbc:ValidatedCriterionRequirementID>13441726-e488-40ff-8202-758a325c1a38</cbc:ValidatedCriterionRequirementID>
+	<cac:ResponseValue><cbc:ResponseID>Lot5</cbc:ResponseID></cac:ResponseValue> <!--1-->
+	<cac:ResponseValue><cbc:ResponseID>Lot6</cbc:ResponseID></cac:ResponseValue> <!--1-->
+	<cac:ResponseValue><cbc:ResponseID>Lot7</cbc:ResponseID></cac:ResponseValue> <!--1-->
+</cac:TenderingCriterionResponse>
+----
+
+[cols="1a"]
+!===
+|*COMMENTS*|
+<1>	This response answers the Criterion Property “Please provide the lots to which you are tendering”;
+<2>	The EO provides three values, Lot1, Lot2 and Lot3, all three of the same type (IDENTIFIER) as requested in the cac:ValueDataTypeCode element from the Request. These are the EO will tender.
+!===

@@ -1,0 +1,14 @@
+ifndef::imagesdir[:imagesdir: images]
+
+[.text-left]
+=== Selection criteria
+
+The range of criteria related to the selection of Economic Operators is wider and more heterogeneous than the one related to the Exclusion grounds criteria. The figure below is intended to identify and list all the categories (branches in text boxes) and criteria (leaves in text without boxes):
+
+[.text-center]
+.Representation of the Selection criteria
+image::Mock_Up16.png[alt="UML_representation", width="900", height="900"]
+
+Some groups or sub-groups of selection criteria share the same structure, while other have their own specific structure. Beware that, differently to the exclusion criteria, some selection criteria do not provide additional data when answering ''Yes'' to the criterion question. When this occurs the ''yes'' answer is the expected data. 
+
+The following section provides examples on Selection Criteria XML Implementation where this behaviour and other features of the ESPD implementation can be studied.
