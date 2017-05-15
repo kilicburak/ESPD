@@ -30,7 +30,7 @@ image::Mock_Up10.png[alt="UML_representation", width="700", height="700"]
 The figure below shows the data structure of the Payment of Taxes Criterion. Notice that the Criterion defines Properties for which an answer is not required, but aim at informing the economic operator specific MS information (in this case it informs of the minimum amount or threshold of debt that is legally permitted in the country where the economic operator is tendering: fields “Threshold”, “Currency” and “Additional Information").  
 
 [.text-center]
-image::Mock_Up11.png[alt="UML_representation", width="600", height="400"]
+image::Mock_Up11.png[alt="UML_representation", width="1000", height="800"]
 
 In this case the EO needs to know the threshold of the buyer regarding unpaid taxes or social security obligations.  In order to provide this information to the EO:
 
